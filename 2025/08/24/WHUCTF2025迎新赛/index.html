@@ -19,25 +19,72 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sishijiuhack.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="H@ck f0r f6n">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sishijiu&#39;s blog">
-<meta property="og:url" content="http://sishijiuhack.github.io/index.html">
+    <meta name="description" content="Misc 出题：sishijiu&amp;Ikalovic&amp;rhzhrzhr 个人认为前期除了osint之外最最最简单的一个方向 题目都不难 以引导各位装工具和自由探索网络环境为主  misc0-ezsignin 点击“进入比赛”前下拉 WHUCTF{the_v3ry_beginning_flag}  misc1-ezpng给了一个文件头.png的附件 搜索发现png是一种图片类型 双击发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WHUCTF2025迎新赛">
+<meta property="og:url" content="http://sishijiuhack.github.io/2025/08/24/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/index.html">
 <meta property="og:site_name" content="sishijiu&#39;s blog">
-<meta property="og:description" content="H@ck f0r f6n">
+<meta property="og:description" content="Misc 出题：sishijiu&amp;Ikalovic&amp;rhzhrzhr 个人认为前期除了osint之外最最最简单的一个方向 题目都不难 以引导各位装工具和自由探索网络环境为主  misc0-ezsignin 点击“进入比赛”前下拉 WHUCTF{the_v3ry_beginning_flag}  misc1-ezpng给了一个文件头.png的附件 搜索发现png是一种图片类型 双击发">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTQwYTliMDE1ZGMzMjRhZjM2OTE1N2Q5NmU4OGJiZGFfOWVFVEw4UEljTDgwUnFidDNIbmx6d2RWREpJOUw0V3NfVG9rZW46VFQ1MWJBbENzb294Mzd4UTFnYWNSNkFybmJmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ODUyZjBmNjVhNzNmYjFiMDJjYmI3MTE4MDdlN2NjYjlfRzdkcEtlUjc2SVlBR0RwdmlNM2M5bmJWaEt4aWVLUm5fVG9rZW46RGF2WWJLUDZOb0hWVGh4bGZpV2NEbmt4bnNiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmRkZTM1NWFiZmUwNzFmNzFhOWI2MGU2OGQ4MDc4MGJfNkFOVjdJTjMyRll2cXRmNEttcGoyWkFpWUlCbGRqSFJfVG9rZW46VGwzRWJPYlpnb1dmWmx4dFlUQ2M0aGpPbjViXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjA5NzUxY2YxMDIyY2Q1NzMwZmUwNmVjMDllYmZmYWZfWnM3cTRyY1JrNTVPUEk3T0hvUVdZN1VjUjBzazdBMkVfVG9rZW46VGtUZGJQNHU2bzNId3h4NVpGQ2N0SkxCbjUyXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTljMDE1MzAyMTgyOWU4ZjQ5NjQ4NTI1YThlMzIwNzJfbXF5OTNubDZ6UVh5U00ydDgzdTA4VDBXRUZoNUs3QlJfVG9rZW46R28wU2JESnp0b3dwcEZ4dnFCb2N4QTFPbnBiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjI0N2IxNjVlNmUxYzY4MGVjMDcxNjgwODBiYzkxY2RfVm1TY3Z4RmhFdzNiTmhpOXFNc0ZmblZQRkRTQnpOTkJfVG9rZW46QXJDMGIwVXNKb0pHc0R4M3REUWNMYzhjbmVoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MjVhYzUwNmJjODU1YzBjNmVhODkwYWIzZWRkNGUzMDFfNjVGTWUyUU9sbWdycG9XeXVQeGxKSm9nd2lUWUlRYmZfVG9rZW46Q2xJV2JKUWJXbzZXeU54cVpxSWNuOHlkbkpiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MGE2Yzg4MmIxOWE2NTA2NjAyM2E3N2ExYmY0MWE4ZWVfY2VvVWd1VEpDaDRxcUpvdzQxaWV3eHp6emQwR0hkTjdfVG9rZW46R0pYUmJxSUtsbzBlaUF4UGd1dmNWM3VYbkdnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NzUzNzA2OGE0YWVhYzY0NzdkM2I0ZjE5YTI3MTczMmNfMk9vdzRiS3l4MHhMRE5oM0cxSHNqR0hCd1NJTlAwam9fVG9rZW46TWlXWmJWZ0VZb1U1OUF4OWViSGNlMW1ubjRmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NDgzNmY1YmRmYmYwZGIyMjJhNDZmNGUzMmRkNDk0ZThfdzlCTFA1VmxYOGJTU1BldjBKM2NYSkNJeHNnZXhMSmhfVG9rZW46QVlwbGJ1UzV2b3lLVjh4Q1RUbGNMNGR4bjZjXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NWVlYWY2ZTkzMmI5Y2QwM2QyODkzYWU3NGE3MjE4ZWZfVzBqdEZla3JDMHBHMDI5aXM2a3d0Zk5CVmdaNFB4dTVfVG9rZW46VTAyQ2Iyd25Wb1NMWkN4dk9yS2NicG92bk1mXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YmM3ZWEwZGRjZWEzNDM3ZDBkZmY1YjgwNmQxMTVmZjhfMVJ5Znc5d2xqbjVZSEt3RkpCQU9OaEIxVUtNSEFZRDNfVG9rZW46UjlBTGJFcjhsbzEybEt4OWtiSmM4ZUxybmZlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWM5NGIwMjNhZTBlNWY3ZDA4NGRkMGEzOGRkZThmMGZfamNHc0Q2RDdVRWFrMWhQU1RPNnB1bmExM1dqeUl2em1fVG9rZW46UjExcGJCVFJwb1hXekl4R1RXc2M5SzBrblJnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTI0ZGJkMWVjMTI5NjNjODhlMWU3MWE4ZTg0MzkxMzhfVWRLaVdMN0Q1eWpvZjZrRTBDSHVUTmd4OVFPakM0WGZfVG9rZW46WEJ4ZmJldTA0b3J6dUl4cDdYTGNucjNnbkZoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDBlZGIxZGI2YTQzZGQ5ZmUzMDQwYWY3NmY1OWUxZjBfUmhKbnNHYklscVBtaU03U1dBcjBPOHlEOWdMU2ZLcjZfVG9rZW46VHRmRmJBRWlqb25KYnN4ZGJDSWNhN2FWbnVnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDFhMzNkMGQxOWYzZjU5YzU0OGIxODdlMWNhMWFlOWRfbTVFcVhldGdWUTdhdG5EU2FtVU9DWUR5SmN2ZnFCdTdfVG9rZW46WEJremJ5bzVwb0pVWTJ4SkNPOGNPcGpZbmRlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDRkMmJkNjIxZTcxM2MwYjUzYzQzODRkOTZlMTViMGFfVVJhYzdVRnY5NUcxVGMwT2Vqc005ZEtScWw1d2hwREZfVG9rZW46WWl6SGJsWjBhb2JnVHh4Z2cwZmNQRU9wbkZlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTUwMThjZDhmNjRlMjlhNWI1Y2FlOTU2YzJlZjI0MDlfZ3BLY2FxdjQyWjZUTWVKN1NCc0l3NE5yNW0yVnBtU0pfVG9rZW46TkJabGJyUlFzb0hoWXF4RWxHcmNsNVdlbmZiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NjA4NTJiMWE4YTljMjgyYjNhMmM1MGVmYjEwMjk0M2ZfMlJRSTR0c3VZNlZVdzRmSHpERktSS0V6UGV6Zmh4QXVfVG9rZW46TG4zWmJsODJmb3Z5Z1Z4MWZ1cWM2bG8zbk9kXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NWM4ZmQ1ZDJiN2EwMDczZTk0ODgwNmY1NjMyOWUyZDJfNEdhQ3lsWFFXeG9CcTVBcWRBd0JPa2czVmc1UGU4NXFfVG9rZW46VmM1RmI5VXkzb0lZOEF4NXFUVGM1SXk3blBiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NzZjZTljNDFlMDlhNWFjZWJiYjgxY2M3YzlmMzVlNjRfNU4yNUQ0eTBLaGRxckNPVGFxOUxpVFRsY0p1cmJoQm9fVG9rZW46VGZJbGJVM0RhbzA2WHJ4eG82bGMwMTVWbmZmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjM1NjM3ZWJiZDMxODI4MTA5NTY3OGU5ZDE2MmY0N2ZfekpsWkw2Q013T3I5eVNuUXYwQ1lxWmRVV01CVkxXd3NfVG9rZW46UDdpMWJRZFdtb1lOaTh4WjJ0emMwMVdkbjI3XzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YzZhMmIzMjg0MjU3NGQ0MzkzYjAyNGViNTU1ZDUyM2NfSkx4SW9CcE16ZmVsa29DSU9ycFVDOUJZOTZQRlZRRFpfVG9rZW46QlBlN2JIWFNub1JFcXR4ZkFiMGM5UGJ6bm1jXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTRkM2NlNDEzZjBjODM3NzJjMDgwYjg3ZTNkYTAxMjlfSVZGYkRSOWtBYml1M2VqYnNhUndBcm95Q0dJcHN4aHJfVG9rZW46RENjS2I2VXpEbzN4MWd4MEJTamNLek5QbmdnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTExMzdiYTA0N2Y1ZTFiZDMyOWUxNTU2OTAyYTA0NTBfRmhwek9Vb2dLUjVBQUo4Y3BFa2toOENqcHlRR25peDNfVG9rZW46SzA1OGJPSnRyb1p4aFN4bmNlVWNOSDlkbnpnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWIzNTIzYjdhZGJlY2EyZTk3MTliZGRjZGM2M2JjZjJfdGZnbXA5aGlocnF6RG56M3A4d0ZvYnZrWTVYSm13UGxfVG9rZW46UVpiWGIzWVJab1hjWDF4YXVLSGNtZHRUblRoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTVkYzgyMzhmYWMzZjhlZWMxNWYzZDk5YTMyY2ZjNWJfbDIxREpHdHlLTFFUdnZxeElRUWkyZThnZ1JmS1FpTnlfVG9rZW46UzR0bmJNOGlUb3R6Ynl4eW5FNWNKMTVPbkhjXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MjU0ZWVjNjYxMzJmZmZmN2ZhOTQyMzkzODE5MjE4NzJfUVZKcEpzRFZ3a3dWZkNyd2NnMXREWkRwUkh6WDdHa2tfVG9rZW46V1lJNGJFbjJtb25HaFB4QXlLWWNkNmV2bkhkXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NDJiYjU0NjM1NDhlOTlmOTJjNDJmNDFjYzU0NzExMzZfOEgzUGhXeE1tbGNqaVlhUHJManJqZlRGVnBnY2o0TnhfVG9rZW46SFZxamJNOGdSb3owaDJ4bEZ1bWNBd3M4bndmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=Zjc5YTIxY2MyM2E0NDRkZjdkOTY5YzNmN2I2MmNlNjlfZVN0eWJQSkFTU0NQRGJWTlVPRmNONXNTMTJNeTFmWnhfVG9rZW46UkRsSGJXZ1Bxb1V6NWR4aHBoNWNKZFpFbk1lXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWI5NGMwZWM3Yjc0NDE2YzAwNTU1YWVlMTFiOWYxODJfNXlaOHh3V1pyeE45TE8zeFZGWFBsOVF6NVNqRHBpRU9fVG9rZW46QTloMGJycmNKb0xJU0V4dVhGNmNiSVdVbllmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDU5MjRhOTkzOTdhNjJhYjk0MTQ4ZmEyOTczYTk3NGJfQ3ZSQ25kOW1oSERCQk1lYjdQdVJPdGhVUndBQkdxVVdfVG9rZW46WENwdWJjNU1Pb09samZ4UjZIWGNCejlybllkXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OGNkN2MzNzE3ODc0ZmVlYzFlOTc0MjMwMGEzMmNmODlfZDhFczRQQ3U3TlpaMXF6SEtiVWJ4T1lqUldYaHQ4QWpfVG9rZW46RDBiamJvWTFNb0NuWEp4anlycWNuY1RIbkFoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NTM0OTFkYzNiYjQxNDIxNWQxMTRmZmE4ZjY5MzkxNGFfNzRXVVE2Q2cwaU9iN1gzVjBhNHptWXFlSmhLejdxZW9fVG9rZW46T21rdWJ6T25YbzQyN0Z4bDJMSmNDRFBwbmZoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NmI4NDhlNzBmZjgxOTMwODRhY2FkYjBjZDAwYmJlZTJfRHRHaVlRZ0RpRnJvVDVJM0lDMVBiZ1oxUVNQbklRWHhfVG9rZW46U1NkdWJ0NE9Sb1ZsdUh4MmFFbWNtdDdjblVjXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTFlOWI1ZmZjZjE1MWZmOTNhNmNhMTM2YTIwZjBlZmJfRndPRkk0RjZmWU8xRXEyTnY0QlluSDlXWFdvY3ZuU3JfVG9rZW46UWlxSWJpYTV2bzVXQVN4SWhtbGNYS3NEbmFnXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MzZkOWYyODg5Y2Q4OTFkOGUyNWZmMDA5MjFjMjQ1NzZfSEZDNFhrUlpaNXFxSWhwUHlXT0tRRVNZeWNBa1dMYklfVG9rZW46TUF6YmJxZmFtb29sUWp4aHpCeGNjbktFbmplXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NmY3NzgzZjVhMzNjMTI4OTkwNjNjMmQxZTAxMTYwMGRfWVJOVDlQdW1IZFl3OEhrcUtTb0NVVE5HaGNLZjZkZW9fVG9rZW46SlZQVGJYcU5jb2llVGd4T2M4ZmNlNGZmbm1iXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NTZkMGFiYjBmYmFkYzNkYWEwNDA4YjgzY2I1NTc2YmVfaUxFaWhBVnNFWlN1U0dNVnJNQjF4Tkt0TEpUNkFQbmRfVG9rZW46VHh6YmJnSWM1b3huNnZ4YXhaUmNVa3pObmVlXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDNjODg4NGZkMjlmYWIxMzk4YmRjM2Q4Mzk1ZDIwMThfVzZVQ0NDNWNaNzBVS1prR2lxejhJVjVVM092TFZ1dHhfVG9rZW46V1hlQ2JZTWhzbzVyMFd4Zm1BQ2N3b284bnloXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjIxMGE1NDczYmQ0NTk3M2EyNzBhYWRlYjRiZGRjNjZfZGJTRTVvMnN1dXpYZU9wWVFyMktXZ3F1STZ4SzlRMVpfVG9rZW46SGl1V2JCdXA4b3NQaVd4UzVqYWNIcVVWblVoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MmRmMmJjN2NhNDNjMDliZGZmN2ViM2FlZWY1ZWIzNjFfbzdVNmpBMWlva3NTTmtlTFhmRGFPaVdLNHpGRjI3T2JfVG9rZW46WGVnTGI0b1FLb09UeUx4OWdJUWN4a0dxbkhlXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWIwODZkNjNjZGYyN2Y0OWE0MGY1Yzk5NTBmOTQxZjRfMThFbXpobVR1cHY3SWI5S1RqUUhxdFNOZW5yTlA1bXdfVG9rZW46TUdvNWJUUFlHb2JpME94T2ZyRGNwb1EwbkhiXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MWE3NTFmYTNlNTBmNzVhMDM1ZTFhYWJiYjdjNTE0NGJfMUF1QVdtMmF6WmlaSXkxSW56bnlNRGVLUDU2Vkx5OVBfVG9rZW46VnVpVmJLajBhbzVjcVl4ZTR2WWNQMURJbjVmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="article:published_time" content="2025-08-24T11:54:00.000Z">
+<meta property="article:modified_time" content="2025-08-24T11:56:39.428Z">
 <meta property="article:author" content="sishijiu">
-<meta property="article:tag" content="test">
+<meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTQwYTliMDE1ZGMzMjRhZjM2OTE1N2Q5NmU4OGJiZGFfOWVFVEw4UEljTDgwUnFidDNIbmx6d2RWREpJOUw0V3NfVG9rZW46VFQ1MWJBbENzb294Mzd4UTFnYWNSNkFybmJmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
 
 
-<link rel="canonical" href="http://sishijiuhack.github.io/">
+<link rel="canonical" href="http://sishijiuhack.github.io/2025/08/24/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://sishijiuhack.github.io/2025/08/24/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/","path":"2025/08/24/WHUCTF2025迎新赛/","title":"WHUCTF2025迎新赛"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sishijiu's blog</title>
+<title>WHUCTF2025迎新赛 | sishijiu's blog</title>
   
 
 
@@ -84,7 +131,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">sishijiu's blog</h1>
+      <p class="site-title">sishijiu's blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">sishijiu</p>
@@ -107,7 +154,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -120,6 +167,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Misc"><span class="nav-number">1.</span> <span class="nav-text">Misc</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#misc0-ezsignin"><span class="nav-number">1.1.</span> <span class="nav-text">misc0-ezsignin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc1-ezpng"><span class="nav-number">1.2.</span> <span class="nav-text">misc1-ezpng</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc2-%E4%BE%9D%E6%97%A7%E8%80%81%E8%89%B2%E6%89%B9"><span class="nav-number">1.3.</span> <span class="nav-text">misc2-依旧老色批</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc3-1-splitbase"><span class="nav-number">1.4.</span> <span class="nav-text">misc3-1-splitbase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc3-2-ezzip"><span class="nav-number">1.5.</span> <span class="nav-text">misc3-2-ezzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc4-BlindWaterMark"><span class="nav-number">1.6.</span> <span class="nav-text">misc4-BlindWaterMark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc5-1-%E5%B9%B4%E8%BD%AE"><span class="nav-number">1.7.</span> <span class="nav-text">misc5-1-年轮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc5-2-Ook"><span class="nav-number">1.8.</span> <span class="nav-text">misc5-2-Ook?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc6-%E5%AF%86%E7%A0%81%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="nav-number">1.9.</span> <span class="nav-text">misc6-密码在哪里</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc7-snowpork"><span class="nav-number">1.10.</span> <span class="nav-text">misc7-snowpork</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc8-boss%E7%9B%B4%E8%81%98"><span class="nav-number">1.11.</span> <span class="nav-text">misc8-boss直聘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bin%E8%B4%A5%E5%A6%82shadow"><span class="nav-number">1.12.</span> <span class="nav-text">bin败如shadow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#misc%E7%AC%91%E4%BC%A0%E4%B9%8Bcan%E2%80%99t-count-basic"><span class="nav-number">1.13.</span> <span class="nav-text">misc笑传之can’t count basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E5%A4%B1%E7%9A%8432%E5%90%8D%E8%B4%9D%E6%96%AF%E6%89%8B"><span class="nav-number">1.14.</span> <span class="nav-text">消失的32名贝斯手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where-is-the-flag"><span class="nav-number">1.15.</span> <span class="nav-text">Where is the flag?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Forensics"><span class="nav-number">2.</span> <span class="nav-text">Forensics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deltafuck"><span class="nav-number">2.1.</span> <span class="nav-text">deltafuck</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">2.1.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">2.1.2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">2.1.3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">2.1.4.</span> <span class="nav-text">4</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E6%8E%A8%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">反推步骤：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.5.</span> <span class="nav-text">???</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ezpcap"><span class="nav-number">2.2.</span> <span class="nav-text">Ezpcap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%951"><span class="nav-number">2.2.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%952"><span class="nav-number">2.2.2.</span> <span class="nav-text">方法2</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -153,16 +201,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://sishijiuhack.github.io/2025/08/24/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,13 +225,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | sishijiu's blog">
+      <meta itemprop="name" content="WHUCTF2025迎新赛 | sishijiu's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/24/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/" class="post-title-link" itemprop="url">WHUCTF2025迎新赛</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          WHUCTF2025迎新赛
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -205,8 +254,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><hr>
+    <div class="post-body" itemprop="articleBody"><h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><hr>
 <p>出题：sishijiu&amp;Ikalovic&amp;rhzhrzhr</p>
 <p>个人认为前期除了osint之外最最最简单的一个方向</p>
 <p>题目都不难 以引导各位装工具和自由探索网络环境为主</p>
@@ -919,7 +967,6 @@
 
 <p>flag{1qwy2781}</p>
 
-      
     </div>
 
     
@@ -927,92 +974,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/ctf/" rel="tag"># ctf</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/05/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://sishijiuhack.github.io/2025/08/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sishijiu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sishijiu's blog">
-      <meta itemprop="description" content="H@ck f0r f6n">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | sishijiu's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-08-05 11:16:55" itemprop="dateCreated datePublished" datetime="2025-08-05T11:16:55+08:00">2025-08-05</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
