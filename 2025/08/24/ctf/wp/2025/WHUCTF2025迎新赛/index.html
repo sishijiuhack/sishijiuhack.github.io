@@ -1,0 +1,1372 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../../../../img/fluid.png">
+  <link rel="icon" href="../../../../../../../img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="sishijiu">
+  <meta name="keywords" content="test">
+  
+    <meta name="description" content="Misc 出题：sishijiu&amp;Ikalovic&amp;rhzhrzhr 个人认为前期除了osint之外最最最简单的一个方向 题目都不难 以引导各位装工具和自由探索网络环境为主  misc0-ezsignin 点击“进入比赛”前下拉 WHUCTF{the_v3ry_beginning_flag}  misc1-ezpng给了一个文件头.png的附件 搜索发现png是一种图片类型 双">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WHUCTF2025迎新赛">
+<meta property="og:url" content="http://sishijiuhack.github.io/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/index.html">
+<meta property="og:site_name" content="sishijiu&#39;s blog">
+<meta property="og:description" content="Misc 出题：sishijiu&amp;Ikalovic&amp;rhzhrzhr 个人认为前期除了osint之外最最最简单的一个方向 题目都不难 以引导各位装工具和自由探索网络环境为主  misc0-ezsignin 点击“进入比赛”前下拉 WHUCTF{the_v3ry_beginning_flag}  misc1-ezpng给了一个文件头.png的附件 搜索发现png是一种图片类型 双">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/sishijiuhack/sishijiuhack.github.io/blob/main/wpsrc/photo/whu2025newcomers/1.PNG">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmRkZTM1NWFiZmUwNzFmNzFhOWI2MGU2OGQ4MDc4MGJfNkFOVjdJTjMyRll2cXRmNEttcGoyWkFpWUlCbGRqSFJfVG9rZW46VGwzRWJPYlpnb1dmWmx4dFlUQ2M0aGpPbjViXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjA5NzUxY2YxMDIyY2Q1NzMwZmUwNmVjMDllYmZmYWZfWnM3cTRyY1JrNTVPUEk3T0hvUVdZN1VjUjBzazdBMkVfVG9rZW46VGtUZGJQNHU2bzNId3h4NVpGQ2N0SkxCbjUyXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTljMDE1MzAyMTgyOWU4ZjQ5NjQ4NTI1YThlMzIwNzJfbXF5OTNubDZ6UVh5U00ydDgzdTA4VDBXRUZoNUs3QlJfVG9rZW46R28wU2JESnp0b3dwcEZ4dnFCb2N4QTFPbnBiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjI0N2IxNjVlNmUxYzY4MGVjMDcxNjgwODBiYzkxY2RfVm1TY3Z4RmhFdzNiTmhpOXFNc0ZmblZQRkRTQnpOTkJfVG9rZW46QXJDMGIwVXNKb0pHc0R4M3REUWNMYzhjbmVoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MjVhYzUwNmJjODU1YzBjNmVhODkwYWIzZWRkNGUzMDFfNjVGTWUyUU9sbWdycG9XeXVQeGxKSm9nd2lUWUlRYmZfVG9rZW46Q2xJV2JKUWJXbzZXeU54cVpxSWNuOHlkbkpiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MGE2Yzg4MmIxOWE2NTA2NjAyM2E3N2ExYmY0MWE4ZWVfY2VvVWd1VEpDaDRxcUpvdzQxaWV3eHp6emQwR0hkTjdfVG9rZW46R0pYUmJxSUtsbzBlaUF4UGd1dmNWM3VYbkdnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NzUzNzA2OGE0YWVhYzY0NzdkM2I0ZjE5YTI3MTczMmNfMk9vdzRiS3l4MHhMRE5oM0cxSHNqR0hCd1NJTlAwam9fVG9rZW46TWlXWmJWZ0VZb1U1OUF4OWViSGNlMW1ubjRmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NDgzNmY1YmRmYmYwZGIyMjJhNDZmNGUzMmRkNDk0ZThfdzlCTFA1VmxYOGJTU1BldjBKM2NYSkNJeHNnZXhMSmhfVG9rZW46QVlwbGJ1UzV2b3lLVjh4Q1RUbGNMNGR4bjZjXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NWVlYWY2ZTkzMmI5Y2QwM2QyODkzYWU3NGE3MjE4ZWZfVzBqdEZla3JDMHBHMDI5aXM2a3d0Zk5CVmdaNFB4dTVfVG9rZW46VTAyQ2Iyd25Wb1NMWkN4dk9yS2NicG92bk1mXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YmM3ZWEwZGRjZWEzNDM3ZDBkZmY1YjgwNmQxMTVmZjhfMVJ5Znc5d2xqbjVZSEt3RkpCQU9OaEIxVUtNSEFZRDNfVG9rZW46UjlBTGJFcjhsbzEybEt4OWtiSmM4ZUxybmZlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWM5NGIwMjNhZTBlNWY3ZDA4NGRkMGEzOGRkZThmMGZfamNHc0Q2RDdVRWFrMWhQU1RPNnB1bmExM1dqeUl2em1fVG9rZW46UjExcGJCVFJwb1hXekl4R1RXc2M5SzBrblJnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTI0ZGJkMWVjMTI5NjNjODhlMWU3MWE4ZTg0MzkxMzhfVWRLaVdMN0Q1eWpvZjZrRTBDSHVUTmd4OVFPakM0WGZfVG9rZW46WEJ4ZmJldTA0b3J6dUl4cDdYTGNucjNnbkZoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDBlZGIxZGI2YTQzZGQ5ZmUzMDQwYWY3NmY1OWUxZjBfUmhKbnNHYklscVBtaU03U1dBcjBPOHlEOWdMU2ZLcjZfVG9rZW46VHRmRmJBRWlqb25KYnN4ZGJDSWNhN2FWbnVnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDFhMzNkMGQxOWYzZjU5YzU0OGIxODdlMWNhMWFlOWRfbTVFcVhldGdWUTdhdG5EU2FtVU9DWUR5SmN2ZnFCdTdfVG9rZW46WEJremJ5bzVwb0pVWTJ4SkNPOGNPcGpZbmRlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDRkMmJkNjIxZTcxM2MwYjUzYzQzODRkOTZlMTViMGFfVVJhYzdVRnY5NUcxVGMwT2Vqc005ZEtScWw1d2hwREZfVG9rZW46WWl6SGJsWjBhb2JnVHh4Z2cwZmNQRU9wbkZlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTUwMThjZDhmNjRlMjlhNWI1Y2FlOTU2YzJlZjI0MDlfZ3BLY2FxdjQyWjZUTWVKN1NCc0l3NE5yNW0yVnBtU0pfVG9rZW46TkJabGJyUlFzb0hoWXF4RWxHcmNsNVdlbmZiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NjA4NTJiMWE4YTljMjgyYjNhMmM1MGVmYjEwMjk0M2ZfMlJRSTR0c3VZNlZVdzRmSHpERktSS0V6UGV6Zmh4QXVfVG9rZW46TG4zWmJsODJmb3Z5Z1Z4MWZ1cWM2bG8zbk9kXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NWM4ZmQ1ZDJiN2EwMDczZTk0ODgwNmY1NjMyOWUyZDJfNEdhQ3lsWFFXeG9CcTVBcWRBd0JPa2czVmc1UGU4NXFfVG9rZW46VmM1RmI5VXkzb0lZOEF4NXFUVGM1SXk3blBiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NzZjZTljNDFlMDlhNWFjZWJiYjgxY2M3YzlmMzVlNjRfNU4yNUQ0eTBLaGRxckNPVGFxOUxpVFRsY0p1cmJoQm9fVG9rZW46VGZJbGJVM0RhbzA2WHJ4eG82bGMwMTVWbmZmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjM1NjM3ZWJiZDMxODI4MTA5NTY3OGU5ZDE2MmY0N2ZfekpsWkw2Q013T3I5eVNuUXYwQ1lxWmRVV01CVkxXd3NfVG9rZW46UDdpMWJRZFdtb1lOaTh4WjJ0emMwMVdkbjI3XzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YzZhMmIzMjg0MjU3NGQ0MzkzYjAyNGViNTU1ZDUyM2NfSkx4SW9CcE16ZmVsa29DSU9ycFVDOUJZOTZQRlZRRFpfVG9rZW46QlBlN2JIWFNub1JFcXR4ZkFiMGM5UGJ6bm1jXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTRkM2NlNDEzZjBjODM3NzJjMDgwYjg3ZTNkYTAxMjlfSVZGYkRSOWtBYml1M2VqYnNhUndBcm95Q0dJcHN4aHJfVG9rZW46RENjS2I2VXpEbzN4MWd4MEJTamNLek5QbmdnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTExMzdiYTA0N2Y1ZTFiZDMyOWUxNTU2OTAyYTA0NTBfRmhwek9Vb2dLUjVBQUo4Y3BFa2toOENqcHlRR25peDNfVG9rZW46SzA1OGJPSnRyb1p4aFN4bmNlVWNOSDlkbnpnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWIzNTIzYjdhZGJlY2EyZTk3MTliZGRjZGM2M2JjZjJfdGZnbXA5aGlocnF6RG56M3A4d0ZvYnZrWTVYSm13UGxfVG9rZW46UVpiWGIzWVJab1hjWDF4YXVLSGNtZHRUblRoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTVkYzgyMzhmYWMzZjhlZWMxNWYzZDk5YTMyY2ZjNWJfbDIxREpHdHlLTFFUdnZxeElRUWkyZThnZ1JmS1FpTnlfVG9rZW46UzR0bmJNOGlUb3R6Ynl4eW5FNWNKMTVPbkhjXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MjU0ZWVjNjYxMzJmZmZmN2ZhOTQyMzkzODE5MjE4NzJfUVZKcEpzRFZ3a3dWZkNyd2NnMXREWkRwUkh6WDdHa2tfVG9rZW46V1lJNGJFbjJtb25HaFB4QXlLWWNkNmV2bkhkXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NDJiYjU0NjM1NDhlOTlmOTJjNDJmNDFjYzU0NzExMzZfOEgzUGhXeE1tbGNqaVlhUHJManJqZlRGVnBnY2o0TnhfVG9rZW46SFZxamJNOGdSb3owaDJ4bEZ1bWNBd3M4bndmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=Zjc5YTIxY2MyM2E0NDRkZjdkOTY5YzNmN2I2MmNlNjlfZVN0eWJQSkFTU0NQRGJWTlVPRmNONXNTMTJNeTFmWnhfVG9rZW46UkRsSGJXZ1Bxb1V6NWR4aHBoNWNKZFpFbk1lXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWI5NGMwZWM3Yjc0NDE2YzAwNTU1YWVlMTFiOWYxODJfNXlaOHh3V1pyeE45TE8zeFZGWFBsOVF6NVNqRHBpRU9fVG9rZW46QTloMGJycmNKb0xJU0V4dVhGNmNiSVdVbllmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDU5MjRhOTkzOTdhNjJhYjk0MTQ4ZmEyOTczYTk3NGJfQ3ZSQ25kOW1oSERCQk1lYjdQdVJPdGhVUndBQkdxVVdfVG9rZW46WENwdWJjNU1Pb09samZ4UjZIWGNCejlybllkXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OGNkN2MzNzE3ODc0ZmVlYzFlOTc0MjMwMGEzMmNmODlfZDhFczRQQ3U3TlpaMXF6SEtiVWJ4T1lqUldYaHQ4QWpfVG9rZW46RDBiamJvWTFNb0NuWEp4anlycWNuY1RIbkFoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NTM0OTFkYzNiYjQxNDIxNWQxMTRmZmE4ZjY5MzkxNGFfNzRXVVE2Q2cwaU9iN1gzVjBhNHptWXFlSmhLejdxZW9fVG9rZW46T21rdWJ6T25YbzQyN0Z4bDJMSmNDRFBwbmZoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NmI4NDhlNzBmZjgxOTMwODRhY2FkYjBjZDAwYmJlZTJfRHRHaVlRZ0RpRnJvVDVJM0lDMVBiZ1oxUVNQbklRWHhfVG9rZW46U1NkdWJ0NE9Sb1ZsdUh4MmFFbWNtdDdjblVjXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTFlOWI1ZmZjZjE1MWZmOTNhNmNhMTM2YTIwZjBlZmJfRndPRkk0RjZmWU8xRXEyTnY0QlluSDlXWFdvY3ZuU3JfVG9rZW46UWlxSWJpYTV2bzVXQVN4SWhtbGNYS3NEbmFnXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MzZkOWYyODg5Y2Q4OTFkOGUyNWZmMDA5MjFjMjQ1NzZfSEZDNFhrUlpaNXFxSWhwUHlXT0tRRVNZeWNBa1dMYklfVG9rZW46TUF6YmJxZmFtb29sUWp4aHpCeGNjbktFbmplXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NmY3NzgzZjVhMzNjMTI4OTkwNjNjMmQxZTAxMTYwMGRfWVJOVDlQdW1IZFl3OEhrcUtTb0NVVE5HaGNLZjZkZW9fVG9rZW46SlZQVGJYcU5jb2llVGd4T2M4ZmNlNGZmbm1iXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NTZkMGFiYjBmYmFkYzNkYWEwNDA4YjgzY2I1NTc2YmVfaUxFaWhBVnNFWlN1U0dNVnJNQjF4Tkt0TEpUNkFQbmRfVG9rZW46VHh6YmJnSWM1b3huNnZ4YXhaUmNVa3pObmVlXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDNjODg4NGZkMjlmYWIxMzk4YmRjM2Q4Mzk1ZDIwMThfVzZVQ0NDNWNaNzBVS1prR2lxejhJVjVVM092TFZ1dHhfVG9rZW46V1hlQ2JZTWhzbzVyMFd4Zm1BQ2N3b284bnloXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjIxMGE1NDczYmQ0NTk3M2EyNzBhYWRlYjRiZGRjNjZfZGJTRTVvMnN1dXpYZU9wWVFyMktXZ3F1STZ4SzlRMVpfVG9rZW46SGl1V2JCdXA4b3NQaVd4UzVqYWNIcVVWblVoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MmRmMmJjN2NhNDNjMDliZGZmN2ViM2FlZWY1ZWIzNjFfbzdVNmpBMWlva3NTTmtlTFhmRGFPaVdLNHpGRjI3T2JfVG9rZW46WGVnTGI0b1FLb09UeUx4OWdJUWN4a0dxbkhlXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWIwODZkNjNjZGYyN2Y0OWE0MGY1Yzk5NTBmOTQxZjRfMThFbXpobVR1cHY3SWI5S1RqUUhxdFNOZW5yTlA1bXdfVG9rZW46TUdvNWJUUFlHb2JpME94T2ZyRGNwb1EwbkhiXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="og:image" content="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MWE3NTFmYTNlNTBmNzVhMDM1ZTFhYWJiYjdjNTE0NGJfMUF1QVdtMmF6WmlaSXkxSW56bnlNRGVLUDU2Vkx5OVBfVG9rZW46VnVpVmJLajBhbzVjcVl4ZTR2WWNQMURJbjVmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA">
+<meta property="article:published_time" content="2025-08-24T11:54:00.000Z">
+<meta property="article:modified_time" content="2025-08-28T10:42:07.498Z">
+<meta property="article:author" content="sishijiu">
+<meta property="article:tag" content="ctf">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://github.com/sishijiuhack/sishijiuhack.github.io/blob/main/wpsrc/photo/whu2025newcomers/1.PNG">
+  
+  
+  
+  <title>WHUCTF2025迎新赛 - sishijiu&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="../../../../../../../css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="../../../../../../../css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="../../../../../../../css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"sishijiuhack.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="../../../../../../../js/utils.js" ></script>
+  <script  src="../../../../../../../js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../../../../../../index.html">
+      <strong>sishijiu</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../index.html" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('../../../../../../../img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="WHUCTF2025迎新赛"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-24 19:54" pubdate>
+          2025年8月24日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          43 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">WHUCTF2025迎新赛</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <meta name="referrer" content="no-referrer"/>
+
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><hr>
+<p>出题：sishijiu&amp;Ikalovic&amp;rhzhrzhr</p>
+<p>个人认为前期除了osint之外最最最简单的一个方向</p>
+<p>题目都不难 以引导各位装工具和自由探索网络环境为主</p>
+<hr>
+<h2 id="misc0-ezsignin"><a href="#misc0-ezsignin" class="headerlink" title="misc0-ezsignin"></a>misc0-ezsignin</h2><p><img src="https://github.com/sishijiuhack/sishijiuhack.github.io/blob/main/wpsrc/photo/whu2025newcomers/1.PNG" srcset="/img/loading.gif" lazyload></p>
+<p>点击“进入比赛”前下拉</p>
+<p>WHUCTF{the_v3ry_beginning_flag}</p>
+<hr>
+<h2 id="misc1-ezpng"><a href="#misc1-ezpng" class="headerlink" title="misc1-ezpng"></a>misc1-ezpng</h2><p>给了一个文件头.png的附件 搜索发现png是一种图片类型 双击发现无法查看</p>
+<p>提示用winhex或010editor 搜索发现这两个都是十六进制编辑器 选择一个进行安装</p>
+<p>这里用winhex打开文件头.png</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmRkZTM1NWFiZmUwNzFmNzFhOWI2MGU2OGQ4MDc4MGJfNkFOVjdJTjMyRll2cXRmNEttcGoyWkFpWUlCbGRqSFJfVG9rZW46VGwzRWJPYlpnb1dmWmx4dFlUQ2M0aGpPbjViXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>发现文件头十六进制信息是<code>50 4B 03 04</code> 对应右边ascii为<code>PK</code> 同时右下角ascii发现了一个<code>flag.txt</code>的字样</p>
+<p>搜索文件头、PK等信息发现这是zip文件的文件头，但后缀名是png的后缀名</p>
+<p>思路为更改后缀名为.zip 那么问题来了有些同学电脑是新的 不知道怎么显示后缀名：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/637215545">https://zhuanlan.zhihu.com/p/637215545</a></p>
+<p>能看到后缀名之后，右键文件重命名，把.png修改为.zip，回车，出现弹窗点击“是”</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjA5NzUxY2YxMDIyY2Q1NzMwZmUwNmVjMDllYmZmYWZfWnM3cTRyY1JrNTVPUEk3T0hvUVdZN1VjUjBzazdBMkVfVG9rZW46VGtUZGJQNHU2bzNId3h4NVpGQ2N0SkxCbjUyXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>解压文件头.zip(PS:解压缩软件推荐Bandzip）</p>
+<p>进入解压之后的文件夹 打开flag.txt</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTljMDE1MzAyMTgyOWU4ZjQ5NjQ4NTI1YThlMzIwNzJfbXF5OTNubDZ6UVh5U00ydDgzdTA4VDBXRUZoNUs3QlJfVG9rZW46R28wU2JESnp0b3dwcEZ4dnFCb2N4QTFPbnBiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>WHUCTF{n0w_y0u_s33_my_he4d}</p>
+<hr>
+<h2 id="misc2-依旧老色批"><a href="#misc2-依旧老色批" class="headerlink" title="misc2-依旧老色批"></a>misc2-依旧老色批</h2><p>题目给了两个附件 一个hint.txt和一个rgb.png 提示给了lsb</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjI0N2IxNjVlNmUxYzY4MGVjMDcxNjgwODBiYzkxY2RfVm1TY3Z4RmhFdzNiTmhpOXFNc0ZmblZQRkRTQnpOTkJfVG9rZW46QXJDMGIwVXNKb0pHc0R4M3REUWNMYzhjbmVoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>搜索lsb 发现相关知识 但好像没什么用 也没有什么txt中提到的jar相关的内容</p>
+<p>按照txt提到的exif 搜索exif信息 发现在图片属性中能看 右键png打开属性查看 发现备注里有一句话：<strong>stegsolve太好用了你们知道吗</strong></p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MjVhYzUwNmJjODU1YzBjNmVhODkwYWIzZWRkNGUzMDFfNjVGTWUyUU9sbWdycG9XeXVQeGxKSm9nd2lUWUlRYmZfVG9rZW46Q2xJV2JKUWJXbzZXeU54cVpxSWNuOHlkbkpiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>搜索stegsolve 发现是一个lsb工具 查询相关教程下载安装（这边要装一个jdk，推荐jdk8版本，相对最兼容）</p>
+<p>打开png文件</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MGE2Yzg4MmIxOWE2NTA2NjAyM2E3N2ExYmY0MWE4ZWVfY2VvVWd1VEpDaDRxcUpvdzQxaWV3eHp6emQwR0hkTjdfVG9rZW46R0pYUmJxSUtsbzBlaUF4UGd1dmNWM3VYbkdnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>那有些小朋友发现还是不会做 怎么办 想起来sishijiu说过的要多搜索 于是打开搜索引擎搜索“ctf misc lsb stegsolve”找到一堆相关教程和题解</p>
+<blockquote>
+<p>发现要用到analyse的dataextract 打开勾选red、green、blue三个通道，选择lsbfirst</p>
+<p>点击preview 向上就能翻找到flag了</p>
+</blockquote>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NzUzNzA2OGE0YWVhYzY0NzdkM2I0ZjE5YTI3MTczMmNfMk9vdzRiS3l4MHhMRE5oM0cxSHNqR0hCd1NJTlAwam9fVG9rZW46TWlXWmJWZ0VZb1U1OUF4OWViSGNlMW1ubjRmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>WHUCTF{lsb_1s_just_th3_st4rt}</p>
+<hr>
+<h2 id="misc3-1-splitbase"><a href="#misc3-1-splitbase" class="headerlink" title="misc3-1-splitbase"></a>misc3-1-splitbase</h2><p>下载压缩包解压后得到一张gif动图</p>
+<p>打开观察发现有一帧是二维码</p>
+<p>使用<a target="_blank" rel="noopener" href="http://1o1o.xyz/">随波逐流</a>gif拆帧工具拆开gif得到二维码（其实速度不高，直接手机对着gif也能扫出来，嘿嘿）</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NDgzNmY1YmRmYmYwZGIyMjJhNDZmNGUzMmRkNDk0ZThfdzlCTFA1VmxYOGJTU1BldjBKM2NYSkNJeHNnZXhMSmhfVG9rZW46QVlwbGJ1UzV2b3lLVjh4Q1RUbGNMNGR4bjZjXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>扫描二维码，得到如下字符串</p>
+<p><code>V0hVQ1RGe3MzM2tfMW50MF90aDNfYmwxbmt9</code></p>
+<p>大小写字母数字均有，尝试base64解码</p>
+<p>WHUCTF{s33k_1nt0_th3_bl1nk}</p>
+<hr>
+<h2 id="misc3-2-ezzip"><a href="#misc3-2-ezzip" class="headerlink" title="misc3-2-ezzip"></a>misc3-2-ezzip</h2><p>给了一个压缩包 发现有密码保护，题目中提示“archpr”和“密码长度为6，包含数字和小写字母”</p>
+<p>搜索<a target="_blank" rel="noopener" href="https://www.gndown.com/4185.html">archpr</a>发现是个爆破软件 下载安装 打开zip 把密码长度和范围设置好 点击开始爆破</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NWVlYWY2ZTkzMmI5Y2QwM2QyODkzYWU3NGE3MjE4ZWZfVzBqdEZla3JDMHBHMDI5aXM2a3d0Zk5CVmdaNFB4dTVfVG9rZW46VTAyQ2Iyd25Wb1NMWkN4dk9yS2NicG92bk1mXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YmM3ZWEwZGRjZWEzNDM3ZDBkZmY1YjgwNmQxMTVmZjhfMVJ5Znc5d2xqbjVZSEt3RkpCQU9OaEIxVUtNSEFZRDNfVG9rZW46UjlBTGJFcjhsbzEybEt4OWtiSmM4ZUxybmZlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>密码：8abc64</p>
+<p>解压得到八卦.txt</p>
+<p><code>☱☲☷☱☱☰☱☲☵☱☰☳☱☲☴☱☰☶☱☷☳☱☴☱☱☵☵☰☶☱☱☵☶☱☶☵☰☶☰☱☶☳☰☶☱☰☴☱☱☳☷☱☷☲☱☵☱☱☶☰☱☳☷☱☴☶☱☵☴☱☷☱☱☷☵</code></p>
+<p>使用随波逐流中的八卦解密工具：WHUCTF{am1nu0s1!_zip_fly}</p>
+<hr>
+<h2 id="misc4-BlindWaterMark"><a href="#misc4-BlindWaterMark" class="headerlink" title="misc4-BlindWaterMark"></a>misc4-BlindWaterMark</h2><p>下载压缩包解压，打开文件夹发现两张外表一致的图片</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWM5NGIwMjNhZTBlNWY3ZDA4NGRkMGEzOGRkZThmMGZfamNHc0Q2RDdVRWFrMWhQU1RPNnB1bmExM1dqeUl2em1fVG9rZW46UjExcGJCVFJwb1hXekl4R1RXc2M5SzBrblJnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>回看题名，题为BlindWaterMark，搜索发现有一个<a target="_blank" rel="noopener" href="https://github.com/chishaxie/BlindWaterMark">github</a>项目就叫这个，这两张图片运用了盲水印的技术</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTI0ZGJkMWVjMTI5NjNjODhlMWU3MWE4ZTg0MzkxMzhfVWRLaVdMN0Q1eWpvZjZrRTBDSHVUTmd4OVFPakM0WGZfVG9rZW46WEJ4ZmJldTA0b3J6dUl4cDdYTGNucjNnbkZoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDBlZGIxZGI2YTQzZGQ5ZmUzMDQwYWY3NmY1OWUxZjBfUmhKbnNHYklscVBtaU03U1dBcjBPOHlEOWdMU2ZLcjZfVG9rZW46VHRmRmJBRWlqb25KYnN4ZGJDSWNhN2FWbnVnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>下载后根据文件指示对题目的两张图片做处理</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDFhMzNkMGQxOWYzZjU5YzU0OGIxODdlMWNhMWFlOWRfbTVFcVhldGdWUTdhdG5EU2FtVU9DWUR5SmN2ZnFCdTdfVG9rZW46WEJremJ5bzVwb0pVWTJ4SkNPOGNPcGpZbmRlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>WHUCTF{BWM_IS_GOOD}</p>
+<hr>
+<h2 id="misc5-1-年轮"><a href="#misc5-1-年轮" class="headerlink" title="misc5-1-年轮"></a>misc5-1-年轮</h2><p>下载压缩包，解压后发现文件夹套娃文件夹，尝试写出脚本提取最里层的文件</p>
+<p>AI写出的代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs Plain">import os<br>import shutil<br>SOURCE_DIRECTORY = &quot;&quot;  # 源目录路径<br>TARGET_DIRECTORY = &quot;&quot;  # 输出目录路径<br>ORGANIZE_BY_TYPE = True     # 是否按文件类型组织<br>OVERWRITE_EXISTING = False  # 是否覆盖同名文件<br>  <br>def extract_files(source_dir, target_dir, organize_by_type, overwrite):<br>    if not os.path.exists(target_dir):<br>        os.makedirs(target_dir)<br>    for root, dirs, files in os.walk(source_dir):<br>        for file in files:<br>            source_path = os.path.join(root, file)<br>            if organize_by_type:<br>                _, ext = os.path.splitext(file)<br>                ext = ext[1:] if ext else &quot;no_extension&quot;<br>                type_dir = os.path.join(target_dir, ext.lower())<br>                if not os.path.exists(type_dir):<br>                    os.makedirs(type_dir)<br>                dest_path = os.path.join(type_dir, file)<br>            else:<br>                dest_path = os.path.join(target_dir, file)<br>            if not overwrite and os.path.exists(dest_path):<br>                base, extension = os.path.splitext(file)<br>                counter = 1<br>                while os.path.exists(dest_path):<br>                    new_name = f&quot;&#123;base&#125;_&#123;counter&#125;&#123;extension&#125;&quot;<br>                    dest_path = os.path.join(os.path.dirname(dest_path), new_name)<br>                    counter += 1<br>            shutil.copy2(source_path, dest_path)<br>  <br>if __name__ == &quot;__main__&quot;:<br><br>    extract_files(SOURCE_DIRECTORY, TARGET_DIRECTORY, ORGANIZE_BY_TYPE, OVERWRITE_EXISTING)<br></code></pre></td></tr></table></figure>
+
+<p>当然这道题也可以直接用bandzip不解压打开压缩包一路狂点qwq</p>
+<p>WHUCTF{taO_wa_1s_fun}</p>
+<hr>
+<h2 id="misc5-2-Ook"><a href="#misc5-2-Ook" class="headerlink" title="misc5-2-Ook?"></a>misc5-2-Ook?</h2><p>下载压缩包，发现有密码，题目中有密文：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Plain">Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook. Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook? Ook. Ook? Ook! Ook. Ook? Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook! Ook! Ook! Ook! Ook! Ook! Ook? Ook. Ook? Ook! Ook. Ook? Ook! Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook! Ook! Ook! Ook! Ook! Ook! Ook? Ook. Ook? Ook! Ook. Ook? Ook! Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook? Ook.<br></code></pre></td></tr></table></figure>
+
+<p>搜索发现一种加解密Ook</p>
+<p>使用<a target="_blank" rel="noopener" href="https://www.splitbrain.org/services/ook">Ook</a>解密得到文本：<code>nizaikankannidehoumianne</code></p>
+<p>用该文本解密压缩包得到flag.txt，出现了一个<code>fake_flag</code>,长得很奇怪的样子</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDRkMmJkNjIxZTcxM2MwYjUzYzQzODRkOTZlMTViMGFfVVJhYzdVRnY5NUcxVGMwT2Vqc005ZEtScWw1d2hwREZfVG9rZW46WWl6SGJsWjBhb2JnVHh4Z2cwZmNQRU9wbkZlXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>该文本中共有497字符，尝试<a target="_blank" rel="noopener" href="http://www.sexy0769.com/zeroWidthEncode/index.jsp">零宽字符解密</a></p>
+<p>解密得到：<code>congratulations！WHUCTF&#123;k3y_1n_o_4nd_0!&#125; key:sh4rk_0n_w1r3:)</code></p>
+<p>key为题目ezpcap的压缩包密码</p>
+<p>WHUCTF{k3y_1n_o_4nd_0!}</p>
+<hr>
+<h2 id="misc6-密码在哪里"><a href="#misc6-密码在哪里" class="headerlink" title="misc6-密码在哪里"></a>misc6-密码在哪里</h2><p>下载压缩包，发现有密码，题目并未给特定的提示信息，根据文件名用winhex寻找密码</p>
+<p>在文件尾部发现信息<code>iloveu#</code> 为压缩包密码 解压得到图片</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTUwMThjZDhmNjRlMjlhNWI1Y2FlOTU2YzJlZjI0MDlfZ3BLY2FxdjQyWjZUTWVKN1NCc0l3NE5yNW0yVnBtU0pfVG9rZW46TkJabGJyUlFzb0hoWXF4RWxHcmNsNVdlbmZiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>按照文件名使用foremost分离文件</p>
+<p>得到jpg文件和zip文件</p>
+<p>检查jpg文件的16进制发现<code>key:kafuchino</code></p>
+<p>用kafuchino解密压缩包，得到被裁减的答案.png</p>
+</blockquote>
+<p>检测文件的CRC值发现其尺寸有问题，修正尺寸为86×1704后得到完整密文</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NjA4NTJiMWE4YTljMjgyYjNhMmM1MGVmYjEwMjk0M2ZfMlJRSTR0c3VZNlZVdzRmSHpERktSS0V6UGV6Zmh4QXVfVG9rZW46TG4zWmJsODJmb3Z5Z1Z4MWZ1cWM2bG8zbk9kXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>摩斯密码解密</p>
+<p>WHUCTF{MISC_IS_SO_FUNNY}</p>
+<hr>
+<h2 id="misc7-snowpork"><a href="#misc7-snowpork" class="headerlink" title="misc7-snowpork"></a>misc7-snowpork</h2><p>打开压缩包发现分为1.2.3三部分，按顺序来解</p>
+<p>1.雪一片一片一片一片</p>
+<p>打开有bacon和snowpork两个txt文件</p>
+<p>bacon中有一串只由A和B构成的字符串，用培根密码将其解密，得到字符<code>passwordsnow</code></p>
+<p>snowpork中第一行韩文后和最后一行韩文结束有一些不可见字符(空格，tab与换行符)，搜索发现为snow隐写，密钥很可能是bacon中得到的”snow”</p>
+<p>用snow隐写工具输入密钥snow，解密得到文本<code>emojikey:pighuh</code></p>
+<p>2.变脸这一块</p>
+<p>打开是一串emoji符号，由上一步得到的密钥说明是emoji相关加解密，搜了几个emoji，最后使用<a target="_blank" rel="noopener" href="https://emoji-aes.miaotony.xyz/">emojiaes</a>解密得到字符<code>xiangsifengzhongkai</code></p>
+<p>以此为密码解开3.pig压缩包</p>
+<p>3.pig</p>
+<p>压缩包内部为一张图片</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NWM4ZmQ1ZDJiN2EwMDczZTk0ODgwNmY1NjMyOWUyZDJfNEdhQ3lsWFFXeG9CcTVBcWRBd0JPa2czVmc1UGU4NXFfVG9rZW46VmM1RmI5VXkzb0lZOEF4NXFUVGM1SXk3blBiXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>猪圈密码 找个在线解密器手动对照输入一下</p>
+<p>whuctf{ni_ruo_san_dong_lai}</p>
+<hr>
+<h2 id="misc8-boss直聘"><a href="#misc8-boss直聘" class="headerlink" title="misc8-boss直聘"></a>misc8-boss直聘</h2><p>打开压缩包，里面有3个文件，唯一的压缩包有密码，明显要从另外两个文件寻找密码</p>
+<ol>
+<li><p>盲，盲点好啊.docx(喜欢乱翻的话该步可能能跳过)</p>
+</li>
+<li><p>用word打开后内部并无有用内容，可能是隐藏在段落符号之间，将后缀名改为zip解压，检查document.xml文件，在行2，列3091处发现盲文<code>⠗⠑⠙⠸⠏⠇⠁⠝⠑⠸⠴</code>，翻译后是<code>red_plane_0</code>，指向png文件的red plane图层</p>
+</li>
+<li><p>真正想赢的人.png</p>
+</li>
+<li><p>用stegsolve打开文件翻到red plane 0图层发现一个码</p>
+</li>
+</ol>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NzZjZTljNDFlMDlhNWFjZWJiYjgxY2M3YzlmMzVlNjRfNU4yNUQ0eTBLaGRxckNPVGFxOUxpVFRsY0p1cmJoQm9fVG9rZW46VGZJbGJVM0RhbzA2WHJ4eG82bGMwMTVWbmZmXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>搜索发现是汉信码，找个汉信码在线扫描器得到压缩包密码<code>m3ng_lei</code></p>
+<ol start="3">
+<li><p>你甚至不能擦伤我.zip</p>
+</li>
+<li><p>打开zip发现又有三个文件，两个zip似乎都有密码，先解图片</p>
+</li>
+<li><ol>
+<li>哼啊啊啊啊.png</li>
+</ol>
+</li>
+<li><p>打开发现是残缺的二维码，使用补全工具补全二维码，扫描进入兽音译者网站</p>
+</li>
+<li><p>winhex打开中发现文件末尾有一串字符<code>5a+G5paH55qE5a+G6ZKl77ya5ZO85ZWK77yBfg==</code></p>
+</li>
+<li><p>base64解码得到：<code>密文的密钥：哼啊！~</code></p>
+</li>
+<li><p>将其预先填入兽音译者网站的编码字符一栏备用</p>
+</li>
+<li><ol start="2">
+<li>随便你爆破，量子计算机也爆破不开.zip</li>
+</ol>
+</li>
+<li><p>由文件名想到zip伪加密，打开16进制编辑器发现数据区的8，9位为08 00，中央目录区的8，9位为09 03，属于伪加密，将中央目录区的09 03改为00 00，保存后成功解密得到密文.txt</p>
+</li>
+<li><p>将密文输入兽音译者得到压缩包密码：<code>key1:114514@#awa</code></p>
+</li>
+<li><ol start="3">
+<li>last.zip</li>
+</ol>
+</li>
+<li><p>解开压缩包后得到peano.jpg，文件名即为加密方式：peano分形，搜索ctf peano，<a target="_blank" rel="noopener" href="https://almostgph.github.io/2024/01/08/IrisCTF2024/#the-peano-scramble">在网上找到复原脚本</a></p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs Python"><br><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br><span class="hljs-keyword">from</span> tqdm <span class="hljs-keyword">import</span> tqdm<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">peano</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">return</span> [[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]]<br>    <span class="hljs-keyword">else</span>:<br>        in_lst = peano(n - <span class="hljs-number">1</span>)<br>        lst = in_lst.copy()<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px - i[<span class="hljs-number">0</span>], py + <span class="hljs-number">1</span> + i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px + i[<span class="hljs-number">0</span>], py + <span class="hljs-number">1</span> + i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px + <span class="hljs-number">1</span> + i[<span class="hljs-number">0</span>], py - i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px - i[<span class="hljs-number">0</span>], py - <span class="hljs-number">1</span> - i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px + i[<span class="hljs-number">0</span>], py - <span class="hljs-number">1</span> - i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px + <span class="hljs-number">1</span> + i[<span class="hljs-number">0</span>], py + i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px - i[<span class="hljs-number">0</span>], py + <span class="hljs-number">1</span> + i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        px,py = lst[-<span class="hljs-number">1</span>]<br>        lst.extend([px + i[<span class="hljs-number">0</span>], py + <span class="hljs-number">1</span> + i[<span class="hljs-number">1</span>]] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> in_lst)<br>        <span class="hljs-keyword">return</span> lst<br>order = peano(<span class="hljs-number">6</span>)<br>img = Image.<span class="hljs-built_in">open</span>(<span class="hljs-string">r&quot;&quot;</span>)  <span class="hljs-comment"># peano.jpg的文件路径</span><br>width, height = img.size<br>block_width = width  <span class="hljs-comment">#// 3</span><br>block_height = height <span class="hljs-comment"># // 3</span><br>new_image = Image.new(<span class="hljs-string">&quot;RGB&quot;</span>, (width, height))<br><span class="hljs-keyword">for</span> i, (x, y) <span class="hljs-keyword">in</span> tqdm(<span class="hljs-built_in">enumerate</span>(order)):<br>    new_x, new_y = i % width, i // width  <span class="hljs-comment"># 根据列表顺序获取新的坐标</span><br>    pixel = img.getpixel((x, height - <span class="hljs-number">1</span> - y))  <span class="hljs-comment"># 获取原图像素</span><br>    new_image.putpixel((new_x, new_y), pixel)  <span class="hljs-comment"># 在新图像中放置像素</span><br>new_image.save(<span class="hljs-string">&quot;rearranged_image.jpg&quot;</span>）<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>复原后得到二维码 扫描</li>
+</ol>
+<p>WHUCTF{Y0U_AR3_tHE_HER0_MAKE_M15C_GR3aT_AgA1N}</p>
+<hr>
+<h2 id="bin败如shadow"><a href="#bin败如shadow" class="headerlink" title="bin败如shadow"></a>bin败如shadow</h2><p>打开解压后的文件夹为key.txt和加密的压缩包，观察txt文件中只有两种字符”喵”和”呜”</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjM1NjM3ZWJiZDMxODI4MTA5NTY3OGU5ZDE2MmY0N2ZfekpsWkw2Q013T3I5eVNuUXYwQ1lxWmRVV01CVkxXd3NfVG9rZW46UDdpMWJRZFdtb1lOaTh4WjJ0emMwMVdkbjI3XzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>由题名中的bin考虑转为二进制数值。但并不知道哪个字符对应0</p>
+<p>从题名的镜子考虑将字符串反转，发现按八位分隔后，文字以“喵呜”或“喵喵”开头，则考虑ASCII编码（ASCII编码中可读字符的编码为33~126，转为八位二进制为01或00开头）</p>
+<p>转为二进制后得到字符<code>bTN3X21ldw</code>，添加两个等号用base64解码得到压缩包密码：<code>m3w_mew</code></p>
+<p>解压压缩包得到txt文件，打开为喵呜二字组成的方阵，这里ctrl加滚轮就可以看出已经被排列出二维码的模样了</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YzZhMmIzMjg0MjU3NGQ0MzkzYjAyNGViNTU1ZDUyM2NfSkx4SW9CcE16ZmVsa29DSU9ycFVDOUJZOTZQRlZRRFpfVG9rZW46QlBlN2JIWFNub1JFcXR4ZkFiMGM5UGJ6bm1jXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>发现是翻转的二维码，截图，将图片镜像后扫描</p>
+<p>当然写个脚本把0和1转为黑白像素块也没问题</p>
+<p>whuctf{mew_mew_mew}</p>
+<hr>
+<h2 id="misc笑传之can’t-count-basic"><a href="#misc笑传之can’t-count-basic" class="headerlink" title="misc笑传之can’t count basic"></a>misc笑传之can’t count basic</h2><p>下载压缩包打开文件为一个1行10000字符的txt文件</p>
+<p>观察发现里面仅含有u,h,c,O,w,C,T,f,N,t,U,F,n,s,{,},3,1这几种字符，考虑将这些字符的出现频率排序</p>
+<p>考虑字频分析排序</p>
+<p>随波逐流一把梭了</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTRkM2NlNDEzZjBjODM3NzJjMDgwYjg3ZTNkYTAxMjlfSVZGYkRSOWtBYml1M2VqYnNhUndBcm95Q0dJcHN4aHJfVG9rZW46RENjS2I2VXpEbzN4MWd4MEJTamNLek5QbmdnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>whuctf{COUNT1sF3n}</p>
+<hr>
+<h2 id="消失的32名贝斯手"><a href="#消失的32名贝斯手" class="headerlink" title="消失的32名贝斯手"></a>消失的32名贝斯手</h2><p>解压压缩包得到一个jpg文件，放入winhex，发现文件末尾有可读字符串</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTExMzdiYTA0N2Y1ZTFiZDMyOWUxNTU2OTAyYTA0NTBfRmhwek9Vb2dLUjVBQUo4Y3BFa2toOENqcHlRR25peDNfVG9rZW46SzA1OGJPSnRyb1p4aFN4bmNlVWNOSDlkbnpnXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>base32解密</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWIzNTIzYjdhZGJlY2EyZTk3MTliZGRjZGM2M2JjZjJfdGZnbXA5aGlocnF6RG56M3A4d0ZvYnZrWTVYSm13UGxfVG9rZW46UVpiWGIzWVJab1hjWDF4YXVLSGNtZHRUblRoXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>发现依然是base32 继续解密 发现得到的flag提交错误</p>
+<p>根据题目名字”消失的”，思考base32解码的本质：</p>
+<p>Base32将任意字符串按照字节进行切分，并将每个字节对应的二进制值（不足8比特高位补0）串联起来，按照5比特一组进行切分，并将每组二进制值转换成十进制来对应32个可打印字符中的一个。</p>
+<p>由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base32按5比特切分的二进制数据必须是40比特的倍数（5和8的最小公倍数）。例如输入单字节字符“%”，它对应的二进制值是“100101”，前面补两个0变成“00100101”（二进制值不足8比特的都要在高位加0直到8比特），从左侧开始按照5比特切分成两组：“00100”和“101”，后一组不足5比特，则在末尾填充0直到5比特，变成“00100”和“10100”，这两组二进制数分别转换成十进制数，通过表格即可找到其对应的可打印字符“E”和“U”，但是这里只用到两组共10比特，还差30比特达到40比特，按照5比特一组还需6组，则在末尾填充6个“&#x3D;”。填充“&#x3D;”符号的作用是方便一些程序的标准化运行，大多数情况下不添加也无关紧要，而且，在URL中使用时必须去掉“&#x3D;”符号。</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MTVkYzgyMzhmYWMzZjhlZWMxNWYzZDk5YTMyY2ZjNWJfbDIxREpHdHlLTFFUdnZxeElRUWkyZThnZ1JmS1FpTnlfVG9rZW46UzR0bmJNOGlUb3R6Ynl4eW5FNWNKMTVPbkhjXzE3NTYwMzU3Njk6MTc1NjAzOTM2OV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>base32解码是把每个字符转换为对应的5byte二进制数据，然后将这些二进制数据串联起来，最后按8bit一组进行切分，转换为原始数据，4个等号是为了凑齐每行的40bit，而解码时由于填充，只用到了前16bit，JZAU转化为的是20bit，有4bit“消失了”，用于解码的就是这消失的4bit。（1byte&#x3D;8bits&#x3D;8位)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs Plain">JZAU====<br>IFSO====<br>INKG====<br>IZ5R====<br>I5ZG====<br>MVQR====<br>ORPW====<br>MRSU====<br>ORSU====<br>MN2D====<br>NF3F====<br>MVPU====<br>ORUE====<br>NFZW====<br>L5UX====<br>ONP3====<br>ORUF====<br>MVPZ====<br>MNXT====<br>OJZA====<br>MVRX====<br>ORPV====<br>MFXF====<br>ON37====<br>MVZH====<br>HI6D====<br>JJNG====<br>IFKR====<br>INJH====<br>IQZW====<br>JM2T====<br>GJLU====<br>JNNG====<br>JNNE====<br>JRDF====<br>INDP====<br>I5ET====<br>JQ2T====<br>HZID====<br>NRSS====<br>MFZV====<br>MVP7====<br>ON2W====<br>MJWS====<br>NF2D====<br>L54U====<br>N52T====<br>OJPV====<br>MFXD====<br>ON3V====<br>MVZG====<br>ONPZ====<br>ORXT====<br>L5TV====<br>MV2H====<br>L5YE====<br>N5UT====<br>NZ2F====<br>OMQX====<br>EF65====<br></code></pre></td></tr></table></figure>
+
+<p>比如JZAU经过上表转化的值为9,25,0,20。转换为二进制为01001 11001 00000 10100共20bit，</p>
+<p>取末尾的4bit出来（0100）</p>
+<p>解码得到的字符共60行，将这60组4bit连在一起，每8bit进行ASCII解码得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs Plain">防止有同学还是没听懂<br>这里对第1-4行进行具体解密举例：<br>JZAU====<br>IFSO====<br>INKG====<br>IZ5R====<br><br>1.由于是取每一行最后4个bit，所以只要先提取每一行最后一个字母<br>U<br>O<br>G<br>R<br><br>2.将字母对照上表（base32字母表）进行转化为十进制，再转为二进制，取出最后4位<br>U-&gt;20-&gt;10100-&gt;0100<br>O-&gt;14-&gt;01110-&gt;1110<br>G-&gt;6-&gt;00110-&gt;0110<br>R-&gt;17-&gt;10001-&gt;0001<br><br>3.将取出的4位二进制合并 每8位转为ascii<br>01001110 01100001<br>    N       a <br></code></pre></td></tr></table></figure>
+
+<p>NaadCTF{Y0u_sav4d_32_b455i5t5}</p>
+<hr>
+<h2 id="Where-is-the-flag"><a href="#Where-is-the-flag" class="headerlink" title="Where is the flag?"></a>Where is the flag?</h2><p>解压，pcl2加载存档文件夹，进入游戏</p>
+<p>发现一块地面和一个循环命令方块</p>
+<p>试了F3+F4发现会被切回冒险模式，试着调出命令方块打印面板发现并没有输出结果，怎么按按钮都没用</p>
+<p>F3查看命令方块坐标，用&#x2F;fill指令将命令方块替换为任意单个体积的方块</p>
+<p>F3+F4切换为创造模式 把刚刚替换后的方块打掉</p>
+<p>发现下面的告示牌</p>
+<p>whuctf{thIs_1s_just_a_easy_0ne}</p>
+<hr>
+<h1 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h1><h2 id="deltafuck"><a href="#deltafuck" class="headerlink" title="deltafuck"></a>deltafuck</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MjU0ZWVjNjYxMzJmZmZmN2ZhOTQyMzkzODE5MjE4NzJfUVZKcEpzRFZ3a3dWZkNyd2NnMXREWkRwUkh6WDdHa2tfVG9rZW46V1lJNGJFbjJtb25HaFB4QXlLWWNkNmV2bkhkXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>DiskGenius打开虚拟磁盘文件</p>
+<p>打开文件夹可以看到windows文件夹和Users文件夹</p>
+<p>Users里有Jacob的用户文件夹</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NDJiYjU0NjM1NDhlOTlmOTJjNDJmNDFjYzU0NzExMzZfOEgzUGhXeE1tbGNqaVlhUHJManJqZlRGVnBnY2o0TnhfVG9rZW46SFZxamJNOGdSb3owaDJ4bEZ1bWNBd3M4bndmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>在<code>\Windows\System32\config</code>下找到SAM和SYSTEM文件</p>
+<p>右键复制到自己的电脑上 然后拖进kali虚拟机</p>
+<p>使用impacket提取哈希</p>
+<p><code>impacket-secretsdump -system SYSTEM -sam SAM local &gt; hashes.txt</code></p>
+<p><code>cat hashes.txt</code></p>
+<p>得到：</p>
+<p><code>Jacob Haavk:1001:aad3b435b51404eeaad3b435b51404ee:4d6527d571c73d1345e4f9a0ce5759bc:::</code></p>
+<p>后半段就是Jacob的NTLM哈希：<code>4d6527d571c73d1345e4f9a0ce5759bc</code></p>
+<p>cmd5网站爆破一下NTLM 没有cmd5的拿hashcat</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=Zjc5YTIxY2MyM2E0NDRkZjdkOTY5YzNmN2I2MmNlNjlfZVN0eWJQSkFTU0NQRGJWTlVPRmNONXNTMTJNeTFmWnhfVG9rZW46UkRsSGJXZ1Bxb1V6NWR4aHBoNWNKZFpFbk1lXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>md5加密一下</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWI5NGMwZWM3Yjc0NDE2YzAwNTU1YWVlMTFiOWYxODJfNXlaOHh3V1pyeE45TE8zeFZGWFBsOVF6NVNqRHBpRU9fVG9rZW46QTloMGJycmNKb0xJU0V4dVhGNmNiSVdVbllmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>whuctf{b0b2f34c1107598505473e680e02fa3d}</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>vmware打开deltafuck的虚拟机</p>
+<p>直接在此电脑搜索注册表regedit.exe 打开</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MDU5MjRhOTkzOTdhNjJhYjk0MTQ4ZmEyOTczYTk3NGJfQ3ZSQ25kOW1oSERCQk1lYjdQdVJPdGhVUndBQkdxVVdfVG9rZW46WENwdWJjNU1Pb09samZ4UjZIWGNCejlybllkXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>flag{Maybe_thIs_ls_the_Easiest_Flag}</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OGNkN2MzNzE3ODc0ZmVlYzFlOTc0MjMwMGEzMmNmODlfZDhFczRQQ3U3TlpaMXF6SEtiVWJ4T1lqUldYaHQ4QWpfVG9rZW46RDBiamJvWTFNb0NuWEp4anlycWNuY1RIbkFoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NTM0OTFkYzNiYjQxNDIxNWQxMTRmZmE4ZjY5MzkxNGFfNzRXVVE2Q2cwaU9iN1gzVjBhNHptWXFlSmhLejdxZW9fVG9rZW46T21rdWJ6T25YbzQyN0Z4bDJMSmNDRFBwbmZoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>在文档里发现监听记录文件夹 翻找后发现除了一个其他都是空文件</p>
+<p>把这个有内容的pcapng复制到桌面 wireshark打开发现是USB流量分析</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ON_Zero/article/details/130528679">https://blog.csdn.net/ON_Zero/article/details/130528679</a></p>
+<p>参考这篇文章或者直接一把梭</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NmI4NDhlNzBmZjgxOTMwODRhY2FkYjBjZDAwYmJlZTJfRHRHaVlRZ0RpRnJvVDVJM0lDMVBiZ1oxUVNQbklRWHhfVG9rZW46U1NkdWJ0NE9Sb1ZsdUh4MmFFbWNtdDdjblVjXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>密码：<code>Ahsarahf0rever</code></p>
+<p>这边sishijiu一开始用脚本把所有caps都弄成unknown字符了 联系出题人把答案改成全大写了 后来发现了这个问题 在此致歉</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YTFlOWI1ZmZjZjE1MWZmOTNhNmNhMTM2YTIwZjBlZmJfRndPRkk0RjZmWU8xRXEyTnY0QlluSDlXWFdvY3ZuU3JfVG9rZW46UWlxSWJpYTV2bzVXQVN4SWhtbGNYS3NEbmFnXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>whuctf{28b6dea67797417eaacd62785a498070}</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MzZkOWYyODg5Y2Q4OTFkOGUyNWZmMDA5MjFjMjQ1NzZfSEZDNFhrUlpaNXFxSWhwUHlXT0tRRVNZeWNBa1dMYklfVG9rZW46TUF6YmJxZmFtb29sUWp4aHpCeGNjbktFbmplXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>火箭发射文件夹中发现发射程序.exe</p>
+<p>复制到自己电脑的桌面用ida打开</p>
+<p>进来点进main函数按F5看到一串奇怪的字符串 怀疑是加密密钥</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NmY3NzgzZjVhMzNjMTI4OTkwNjNjMmQxZTAxMTYwMGRfWVJOVDlQdW1IZFl3OEhrcUtTb0NVVE5HaGNLZjZkZW9fVG9rZW46SlZQVGJYcU5jb2llVGd4T2M4ZmNlNGZmbm1iXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>发现里面有个encrypt函数 点进去发现是加密算法</p>
+<p>交给ai帮忙解密一下</p>
+<p>根据给定的加密函数和主函数代码，加密过程是将输入字符串（Rocket Launch Key）与密钥字符串 “Haavk” 进行循环加密。加密公式为： <code>encrypted_char = (original_char + key_char) % 93 + 33</code> 其中，<code>original_char</code> 是输入字符串的每个字符的 ASCII 值，<code>key_char</code> 是密钥 “Haavk” 的循环字符（索引为 <code>i % 5</code>），<code>encrypted_char</code> 是加密后的字符。</p>
+<p>给定的加密后字符串为<code>&quot;_3A|7x76DE7m&gt;3%3&quot;</code>（长度为 17 个字符）。目标是通过反推加密过程，找到原始输入字符串，使得加密后与该字符串匹配。</p>
+<h4 id="反推步骤："><a href="#反推步骤：" class="headerlink" title="反推步骤："></a>反推步骤：</h4><ol>
+<li>计算加密后字符串的 <code>s_i = e_i - 33</code>： <code>e_i</code> 是加密后字符的 ASCII 值，<code>s_i</code> 对应 <code>(original_char + key_char) % 93</code> 的结果。 列出每个字符的 <code>e_i</code> 和 <code>s_i</code>：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>索引 (i)</td>
+<td>加密字符</td>
+<td>e_i (ASCII)</td>
+<td>s_i &#x3D; e_i - 33</td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>‘_’</td>
+<td>95</td>
+<td>62</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>‘3’</td>
+<td>51</td>
+<td>18</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>‘A’</td>
+<td>65</td>
+<td>32</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>‘</td>
+<td>‘</td>
+<td>124</td>
+<td>91</td>
+</tr>
+<tr>
+<td>4</td>
+<td>‘7’</td>
+<td>55</td>
+<td>22</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>‘x’</td>
+<td>120</td>
+<td>87</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>‘7’</td>
+<td>55</td>
+<td>22</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>‘6’</td>
+<td>54</td>
+<td>21</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>‘D’</td>
+<td>68</td>
+<td>35</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>‘E’</td>
+<td>69</td>
+<td>36</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>‘&#96;’</td>
+<td>96</td>
+<td>63</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>‘7’</td>
+<td>55</td>
+<td>22</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>‘m’</td>
+<td>109</td>
+<td>76</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>‘&gt;’</td>
+<td>62</td>
+<td>29</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>‘3’</td>
+<td>51</td>
+<td>18</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>‘%’</td>
+<td>37</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>‘3’</td>
+<td>51</td>
+<td>18</td>
+<td></td>
+</tr>
+</tbody></table>
+<ol>
+<li>密钥 “Haavk” 的 ASCII 值和索引： 密钥字符的 ASCII 值：<code>&#39;H&#39;=72</code>, <code>&#39;a&#39;=97</code>, <code>&#39;a&#39;=97</code>, <code>&#39;v&#39;=118</code>, <code>&#39;k&#39;=107</code>。 密钥索引 <code>j = i % 5</code>：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>j &#x3D; i % 5</td>
+<td>key_char</td>
+<td>k_j (ASCII)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>‘H’</td>
+<td>72</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>‘v’</td>
+<td>118</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>‘k’</td>
+<td>107</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0</td>
+<td>‘H’</td>
+<td>72</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2</td>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3</td>
+<td>‘v’</td>
+<td>118</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4</td>
+<td>‘k’</td>
+<td>107</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0</td>
+<td>‘H’</td>
+<td>72</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1</td>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2</td>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+<tr>
+<td>13</td>
+<td>3</td>
+<td>‘v’</td>
+<td>118</td>
+</tr>
+<tr>
+<td>14</td>
+<td>4</td>
+<td>‘k’</td>
+<td>107</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0</td>
+<td>‘H’</td>
+<td>72</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1</td>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>反推原始字符 <code>o_i</code>： 根据加密公式 <code>(o_i + k_j) % 93 = s_i</code>， 得 <code>o_i = (s_i - k_j + 93 * m) % 256</code>，其中 <code>m</code> 是整数，需选择 <code>m</code> 使得 <code>o_i</code> 在可打印 ASCII 范围（32-126）。 计算每个 <code>o_i</code>：</p>
+<ol>
+<li><p><code>o_i = s_i - k_j + 93 * m</code>，选择 <code>m</code> 使 <code>o_i</code> 合理。</p>
+</li>
+<li><p>例如，<code>i=0</code>: <code>s_i=62</code>, <code>k_j=72</code>, <code>d = 62 - 72 = -10</code>。 <code>o_i = -10 + 93*m</code>：<code>m=1</code> 时 <code>o_i=83</code> (‘S’)，合理。</p>
+</li>
+<li><p>类似地计算所有位置，得到原始字符：</p>
+</li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>s_i</td>
+<td>k_j</td>
+<td>d &#x3D; s_i - k_j</td>
+<td>o_i (选择 m 后)</td>
+<td>原始字符</td>
+</tr>
+<tr>
+<td>0</td>
+<td>62</td>
+<td>72</td>
+<td>-10</td>
+<td>83 (m&#x3D;1)</td>
+<td>‘S’</td>
+</tr>
+<tr>
+<td>1</td>
+<td>18</td>
+<td>97</td>
+<td>-79</td>
+<td>107 (m&#x3D;2)</td>
+<td>‘k’</td>
+</tr>
+<tr>
+<td>2</td>
+<td>32</td>
+<td>97</td>
+<td>-65</td>
+<td>121 (m&#x3D;2)</td>
+<td>‘y’</td>
+</tr>
+<tr>
+<td>3</td>
+<td>91</td>
+<td>118</td>
+<td>-27</td>
+<td>66 (m&#x3D;1)</td>
+<td>‘B’</td>
+</tr>
+<tr>
+<td>4</td>
+<td>22</td>
+<td>107</td>
+<td>-85</td>
+<td>101 (m&#x3D;2)</td>
+<td>‘e’</td>
+</tr>
+<tr>
+<td>5</td>
+<td>87</td>
+<td>72</td>
+<td>15</td>
+<td>108 (m&#x3D;1)</td>
+<td>‘l’</td>
+</tr>
+<tr>
+<td>6</td>
+<td>22</td>
+<td>97</td>
+<td>-75</td>
+<td>111 (m&#x3D;2)</td>
+<td>‘o’</td>
+</tr>
+<tr>
+<td>7</td>
+<td>21</td>
+<td>97</td>
+<td>-76</td>
+<td>110 (m&#x3D;2)</td>
+<td>‘n’</td>
+</tr>
+<tr>
+<td>8</td>
+<td>35</td>
+<td>118</td>
+<td>-83</td>
+<td>103 (m&#x3D;2)</td>
+<td>‘g’</td>
+</tr>
+<tr>
+<td>9</td>
+<td>36</td>
+<td>107</td>
+<td>-71</td>
+<td>115 (m&#x3D;2)</td>
+<td>‘s’</td>
+</tr>
+<tr>
+<td>10</td>
+<td>63</td>
+<td>72</td>
+<td>-9</td>
+<td>84 (m&#x3D;1)</td>
+<td>‘T’</td>
+</tr>
+<tr>
+<td>11</td>
+<td>22</td>
+<td>97</td>
+<td>-75</td>
+<td>111 (m&#x3D;2)</td>
+<td>‘o’</td>
+</tr>
+<tr>
+<td>12</td>
+<td>76</td>
+<td>97</td>
+<td>-21</td>
+<td>72 (m&#x3D;1)</td>
+<td>‘H’</td>
+</tr>
+<tr>
+<td>13</td>
+<td>29</td>
+<td>118</td>
+<td>-89</td>
+<td>97 (m&#x3D;2)</td>
+<td>‘a’</td>
+</tr>
+<tr>
+<td>14</td>
+<td>18</td>
+<td>107</td>
+<td>-89</td>
+<td>97 (m&#x3D;2)</td>
+<td>‘a’</td>
+</tr>
+<tr>
+<td>15</td>
+<td>4</td>
+<td>72</td>
+<td>-68</td>
+<td>118 (m&#x3D;2)</td>
+<td>‘v’</td>
+</tr>
+<tr>
+<td>16</td>
+<td>18</td>
+<td>97</td>
+<td>-79</td>
+<td>107 (m&#x3D;2)</td>
+<td>‘k’</td>
+</tr>
+</tbody></table>
+<ol>
+<li>原始字符串： 连接所有原始字符：<code>S</code> + <code>k</code> + <code>y</code> + <code>B</code> + <code>e</code> + <code>l</code> + <code>o</code> + <code>n</code> + <code>g</code> + <code>s</code> + <code>T</code> + <code>o</code> + <code>H</code> + <code>a</code> + <code>a</code> + <code>v</code> + <code>k</code> &#x3D; <code>&quot;SkyBelongsToHaavk&quot;</code>。</li>
+</ol>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=NTZkMGFiYjBmYmFkYzNkYWEwNDA4YjgzY2I1NTc2YmVfaUxFaWhBVnNFWlN1U0dNVnJNQjF4Tkt0TEpUNkFQbmRfVG9rZW46VHh6YmJnSWM1b3huNnZ4YXhaUmNVa3pObmVlXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>whuctf{089d37a29a7bc235b842364259720457}</p>
+<h3 id=""><a href="#" class="headerlink" title="???"></a>???</h3><p>找到彩蛋</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDNjODg4NGZkMjlmYWIxMzk4YmRjM2Q4Mzk1ZDIwMThfVzZVQ0NDNWNaNzBVS1prR2lxejhJVjVVM092TFZ1dHhfVG9rZW46V1hlQ2JZTWhzbzVyMFd4Zm1BQ2N3b284bnloXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>找到群友和游戏</p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=YjIxMGE1NDczYmQ0NTk3M2EyNzBhYWRlYjRiZGRjNjZfZGJTRTVvMnN1dXpYZU9wWVFyMktXZ3F1STZ4SzlRMVpfVG9rZW46SGl1V2JCdXA4b3NQaVd4UzVqYWNIcVVWblVoXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MmRmMmJjN2NhNDNjMDliZGZmN2ViM2FlZWY1ZWIzNjFfbzdVNmpBMWlva3NTTmtlTFhmRGFPaVdLNHpGRjI3T2JfVG9rZW46WGVnTGI0b1FLb09UeUx4OWdJUWN4a0dxbkhlXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=OWIwODZkNjNjZGYyN2Y0OWE0MGY1Yzk5NTBmOTQxZjRfMThFbXpobVR1cHY3SWI5S1RqUUhxdFNOZW5yTlA1bXdfVG9rZW46TUdvNWJUUFlHb2JpME94T2ZyRGNwb1EwbkhiXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://whuctf-team.feishu.cn/space/api/box/stream/download/asynccode/?code=MWE3NTFmYTNlNTBmNzVhMDM1ZTFhYWJiYjdjNTE0NGJfMUF1QVdtMmF6WmlaSXkxSW56bnlNRGVLUDU2Vkx5OVBfVG9rZW46VnVpVmJLajBhbzVjcVl4ZTR2WWNQMURJbjVmXzE3NTYwMzU4MTk6MTc1NjAzOTQxOV9WNA" srcset="/img/loading.gif" lazyload></p>
+<p>whuctf{2312e27351570365ad521d38ecda5d22}</p>
+<hr>
+<h2 id="Ezpcap"><a href="#Ezpcap" class="headerlink" title="Ezpcap"></a>Ezpcap</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Plain">GET /index.php?url=gopher://127.0.0.1:80/_POST%20%2Fadmin.php%20HTTP%2F1.1%250d%250aHost%3A%20localhost%3A80%250d%250aConnection%3A%20close%250d%250aContent-Type%3A%20application%2Fx-www-form-urlencoded%250d%250aContent-Length%3A%2078%250d%250a%250d%250aid%253D1%2529%2520and%2520if%2528%2528ascii%2528substr%2528%2528select%2520flag%2520from%2520flag%2529%252C7%252C1%2529%2529%253D%252767%2527%2529%252Csleep%25283%2529%252C0%2529%2520--%2520<br></code></pre></td></tr></table></figure>
+
+<p>观察包的规律可以看到，是一个时间盲注加ssrf，所以需要找到时间间隔</p>
+<p>url解码以后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs Plain">GET /index.php?url=gopher://127.0.0.1:80/_POST /admin.php HTTP/1.1<br>Host: localhost:80<br>Connection: close<br>Content-Type: application/x-www-form-urlencoded<br>Content-Length: 78<br><br>id=1) and if((ascii(substr((select flag from flag),7,1))=&#x27;67&#x27;),sleep(3),0) -- <br></code></pre></td></tr></table></figure>
+
+<p>可以输入过滤规则找到和前一个tcp包时间间隔为3s以上的包，肯定会冗余一点点，然后在其中继续找</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs Plain">规则为<br>frame.time_delta&gt;0.018&amp;&amp;http<br></code></pre></td></tr></table></figure>
+
+<p>得到包序号和对应的注入结果字符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs Plain">565<br>f<br>1186<br>l<br>1720<br>a<br>2305<br>g<br>3064<br>&#123;<br>3154<br>1<br>3831<br>q<br>4549<br>w<br>5285<br>y<br>5382<br>2<br>5525<br>7<br>5679<br>8<br>5772<br>1<br>6625<br>&#125;（最后一个得自己找，因为已经结束了没有延时）<br></code></pre></td></tr></table></figure>
+
+<p>拼接结果</p>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><p>使用pyshark 来解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Plain">import pyshark<br>from datetime import timedelta<br>import re <br><br>cap = pyshark.FileCapture(&quot;challenge.pcapng&quot;, display_filter=&#x27;http&#x27;)<br><br>flag = &#x27;&#x27;<br>p = r&#x27;%2527(\d+)%2527%2529%252Csleep&#x27;<br><br>for pkt in cap:<br>    if int(pkt.length) &lt; 650: # 当包长度小于 650 时为请求包，记录uri 和 时间<br>        time_s = pkt.sniff_time<br>        url = pkt.http.request_full_uri<br>    else:         # 当返回包时长与发送包大于 3 秒时 用正则 将上一条发送包的ULR中时间盲注的字符取出来<br>        if pkt.sniff_time - time_s &gt; timedelta(seconds=3):   <br>            c = re.findall(p, str(url))<br>            flag += chr(int(c[0]))<br>            print(flag)<br></code></pre></td></tr></table></figure>
+
+<p>flag{1qwy2781}</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../../../../../../tags/ctf/" class="print-no-link">#ctf</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>WHUCTF2025迎新赛</div>
+      <div>http://sishijiuhack.github.io/2025/08/24/ctf/wp/2025/WHUCTF2025迎新赛/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>sishijiu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="../../../../../../../js/events.js" ></script>
+<script  src="../../../../../../../js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="../../../../../../../js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="../../../../../../../js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="../../../../../../../js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
