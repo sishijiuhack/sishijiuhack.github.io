@@ -27,7 +27,7 @@
 <meta property="og:description" content="&#x2F;based on kali2020 vmware&#x2F; 安装安装依赖环境distorm3vext01&#x2F;distorm3：distorm3 — vext01&#x2F;distorm3: distorm3下载zip解压 拖进虚拟机桌面 移动root下	cd dirstorm3	python2 setup.py install可选插件    Distorm3（反编译库）：p">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-05T14:01:52.000Z">
-<meta property="article:modified_time" content="2025-09-05T14:22:17.879Z">
+<meta property="article:modified_time" content="2025-09-05T14:24:42.151Z">
 <meta property="article:author" content="sishijiu">
 <meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.5k 字
+          5.4k 字
         
       </span>
     
@@ -277,16 +277,14 @@
               <div class="markdown-body">
                 
                 <p>&#x2F;<em>based on kali2020 vmware</em>&#x2F;</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="安装依赖环境"><a href="#安装依赖环境" class="headerlink" title="安装依赖环境"></a>安装依赖环境</h2><h3 id="distorm3"><a href="#distorm3" class="headerlink" title="distorm3"></a>distorm3</h3><p><a target="_blank" rel="noopener" href="https://github.com/vext01/distorm3">vext01&#x2F;distorm3：distorm3 — vext01&#x2F;distorm3: distorm3</a><br>下载zip解压 拖进虚拟机桌面 移动root下<br>	cd dirstorm3<br>	python2 setup.py install<br>可选插件  </p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="安装依赖环境"><a href="#安装依赖环境" class="headerlink" title="安装依赖环境"></a>安装依赖环境</h2><h3 id="distorm3"><a href="#distorm3" class="headerlink" title="distorm3"></a>distorm3</h3><p><a target="_blank" rel="noopener" href="https://github.com/vext01/distorm3">vext01&#x2F;distorm3：distorm3 — vext01&#x2F;distorm3: distorm3</a><br>下载zip解压 拖进虚拟机桌面 移动root下<br>	<code>cd dirstorm3</code><br>	<code>python2 setup.py install</code><br>可选插件  </p>
 <blockquote>
 <p><strong>Distorm3（反编译库）：pip install distorm3<br>Yara（恶意软件分类工具）：pip install yara<br>PyCrypto（加密工具集）：pip install pycrypto<br>PIL（图片处理库）：pip install pil<br>OpenPyxl（读写excel文件）：pip install openpyxl<br>ujson（JSON解析）：pip install ujson</strong></p>
 </blockquote>
-<h3 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h3><h4 id="安装pip2"><a href="#安装pip2" class="headerlink" title="安装pip2"></a>安装pip2</h4><p><code>下载 get-pip.py</code><br>	curl <a target="_blank" rel="noopener" href="https://bootstrap.pypa.io/pip/2.7/get-pip.py">https://bootstrap.pypa.io/pip/2.7/get-pip.py</a> -o get-pip.py<code>  </code>安装 pip&#96;<br>	python2 get-pip.py</p>
-<h4 id="安装pycrptodome"><a href="#安装pycrptodome" class="headerlink" title="安装pycrptodome"></a>安装pycrptodome</h4><pre><code class="hljs">pip2 install pycryptodome
-</code></pre>
-<p>如果安装失败，可使用以下命令切换国内源<br>	pip2 install pycryptodome -i <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
-<h2 id="下载volatility源码"><a href="#下载volatility源码" class="headerlink" title="下载volatility源码"></a>下载volatility源码</h2><p><a target="_blank" rel="noopener" href="https://github.com/volatilityfoundation/volatility">https://github.com/volatilityfoundation/volatility</a><br>下载zip解压后将volatility-master拖进虚拟机桌面 然后移动到root下<br>	cd volatility-master<br>	python2 setup.py install<br>	vol.py<br>出现一堆Failed to import不要慌 第一行有版本信息就行<br>把当前目录rename为volatility然后移动到指定的文件夹<br>	sudo mv volatility &#x2F;usr&#x2F;local&#x2F;<br>	sudo vim &#x2F;etc&#x2F;profile<br>在最后一行添加<br>    <code>export PATH=/usr/local/volatility:$PATH</code><br>输入<code>:wq!</code>保存并退出</p>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><h3 id="安装mimikatz"><a href="#安装mimikatz" class="headerlink" title="安装mimikatz"></a>安装mimikatz</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2160360">Volatility安装mimikatz-腾讯云开发者社区-腾讯云</a><br>将mimikatz.py复制到volatility下的plugins文件夹<br>	sudo mv mimikatz.py &#x2F;usr&#x2F;local&#x2F;volatility&#x2F;plugins&#x2F;<br>	pip install construct&#96;</p>
+<h3 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h3><h4 id="安装pip2"><a href="#安装pip2" class="headerlink" title="安装pip2"></a>安装pip2</h4><p><code>下载 get-pip.py</code><br>	<code>curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py</code><br><code>安装 pip</code><br>	<code>python2 get-pip.py</code></p>
+<h4 id="安装pycrptodome"><a href="#安装pycrptodome" class="headerlink" title="安装pycrptodome"></a>安装pycrptodome</h4><p>输入<br>	<code>pip2 install pycryptodome</code><br>如果安装失败，可使用以下命令切换国内源<br>	<code>pip2 install pycryptodome -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
+<h2 id="下载volatility源码"><a href="#下载volatility源码" class="headerlink" title="下载volatility源码"></a>下载volatility源码</h2><p><a target="_blank" rel="noopener" href="https://github.com/volatilityfoundation/volatility">https://github.com/volatilityfoundation/volatility</a><br>下载zip解压后将volatility-master拖进虚拟机桌面 然后移动到root下<br>	<code>cd volatility-master</code><br>	<code>python2 setup.py install</code><br>	<code>vol.py</code><br>出现一堆Failed to import不要慌 第一行有版本信息就行<br>把当前目录rename为volatility然后移动到指定的文件夹<br>	<code>sudo mv volatility /usr/local/</code><br>	<code>sudo vim /etc/profile</code><br>在最后一行添加<br>    <code>export PATH=/usr/local/volatility:$PATH</code><br>输入<code>:wq!</code>保存并退出</p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><h3 id="安装mimikatz"><a href="#安装mimikatz" class="headerlink" title="安装mimikatz"></a>安装mimikatz</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2160360">Volatility安装mimikatz-腾讯云开发者社区-腾讯云</a><br>将mimikatz.py复制到volatility下的plugins文件夹<br>	<code>sudo mv mimikatz.py /usr/local/volatility/plugins/</code><br>	<code>pip install construct</code></p>
 <p>此时运行<code>vol.py --info</code>发现基本没有插件报错了</p>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sakura--tears/p/17148293.html#%E4%BA%94%EF%BC%8C%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F">内存取证-volatility工具的使用 （史上更全教程，更全命令） - 路baby - 博客园</a></p>
 <h2 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h2><p><code>vol.py -h</code>查看帮助</p>
