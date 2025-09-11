@@ -71,7 +71,7 @@
 <meta property="og:image" content="http://sishijiuhack.github.io/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/43.png">
 <meta property="og:image" content="http://sishijiuhack.github.io/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/44.png">
 <meta property="article:published_time" content="2025-08-24T11:54:00.000Z">
-<meta property="article:modified_time" content="2025-09-11T01:53:33.767Z">
+<meta property="article:modified_time" content="2025-09-11T02:06:10.848Z">
 <meta property="article:author" content="sishijiu">
 <meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary_large_image">
@@ -326,45 +326,45 @@
 <p>个人认为前期除了osint之外最最最简单的一个方向</p>
 <p>题目都不难 以引导各位装工具和自由探索网络环境为主</p>
 <hr>
-<h2 id="misc0-ezsignin"><a href="#misc0-ezsignin" class="headerlink" title="misc0-ezsignin"></a>misc0-ezsignin</h2><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/1.PNG" srcset="/img/loading.gif" lazyload alt="ezsignin"><br><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/2.PNG" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<h2 id="misc0-ezsignin"><a href="#misc0-ezsignin" class="headerlink" title="misc0-ezsignin"></a>misc0-ezsignin</h2><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/1.PNG" srcset="/img/loading.gif" lazyload><br><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/2.PNG" srcset="/img/loading.gif" lazyload></p>
 <p>点击“进入比赛”前下拉</p>
 <p>WHUCTF{the_v3ry_beginning_flag}</p>
 <hr>
 <h2 id="misc1-ezpng"><a href="#misc1-ezpng" class="headerlink" title="misc1-ezpng"></a>misc1-ezpng</h2><p>给了一个文件头.png的附件 搜索发现png是一种图片类型 双击发现无法查看</p>
 <p>提示用winhex或010editor 搜索发现这两个都是十六进制编辑器 选择一个进行安装</p>
 <p>这里用winhex打开文件头.png</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/3.PNG" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/3.PNG" srcset="/img/loading.gif" lazyload></p>
 <p>发现文件头十六进制信息是<code>50 4B 03 04</code> 对应右边ascii为<code>PK</code> 同时右下角ascii发现了一个<code>flag.txt</code>的字样</p>
 <p>搜索文件头、PK等信息发现这是zip文件的文件头，但后缀名是png的后缀名</p>
 <p>思路为更改后缀名为.zip 那么问题来了有些同学电脑是新的 不知道怎么显示后缀名：</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/637215545">https://zhuanlan.zhihu.com/p/637215545</a></p>
 <p>能看到后缀名之后，右键文件重命名，把.png修改为.zip，回车，出现弹窗点击“是”</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/4.PNG" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/4.PNG" srcset="/img/loading.gif" lazyload></p>
 <p>解压文件头.zip(PS:解压缩软件推荐Bandzip）</p>
 <p>进入解压之后的文件夹 打开flag.txt</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/5.PNG" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/5.PNG" srcset="/img/loading.gif" lazyload></p>
 <p>WHUCTF{n0w_y0u_s33_my_he4d}</p>
 <hr>
 <h2 id="misc2-依旧老色批"><a href="#misc2-依旧老色批" class="headerlink" title="misc2-依旧老色批"></a>misc2-依旧老色批</h2><p>题目给了两个附件 一个hint.txt和一个rgb.png 提示给了lsb</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/6.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/6.png" srcset="/img/loading.gif" lazyload></p>
 <p>搜索lsb 发现相关知识 但好像没什么用 也没有什么txt中提到的jar相关的内容</p>
 <p>按照txt提到的exif 搜索exif信息 发现在图片属性中能看 右键png打开属性查看 发现备注里有一句话：<strong>stegsolve太好用了你们知道吗</strong></p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/7.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/7.png" srcset="/img/loading.gif" lazyload></p>
 <p>搜索stegsolve 发现是一个lsb工具 查询相关教程下载安装（这边要装一个jdk，推荐jdk8版本，相对最兼容）</p>
 <p>打开png文件</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/8.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/8.png" srcset="/img/loading.gif" lazyload></p>
 <p>那有些小朋友发现还是不会做 怎么办 想起来sishijiu说过的要多搜索 于是打开搜索引擎搜索“ctf misc lsb stegsolve”找到一堆相关教程和题解</p>
 <blockquote>
 <p>发现要用到analyse的dataextract 打开勾选red、green、blue三个通道，选择lsbfirst</p>
 <p>点击preview 向上就能翻找到flag了</p>
 </blockquote>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/9.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/9.png" srcset="/img/loading.gif" lazyload></p>
 <p>WHUCTF{lsb_1s_just_th3_st4rt}</p>
 <hr>
 <h2 id="misc3-1-splitbase"><a href="#misc3-1-splitbase" class="headerlink" title="misc3-1-splitbase"></a>misc3-1-splitbase</h2><p>下载压缩包解压后得到一张gif动图</p>
 <p>打开观察发现有一帧是二维码</p>
 <p>使用<a target="_blank" rel="noopener" href="http://1o1o.xyz/">随波逐流</a>gif拆帧工具拆开gif得到二维码（其实速度不高，直接手机对着gif也能扫出来，嘿嘿）</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/10.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/10.png" srcset="/img/loading.gif" lazyload></p>
 <p>扫描二维码，得到如下字符串</p>
 <p><code>V0hVQ1RGe3MzM2tfMW50MF90aDNfYmwxbmt9</code></p>
 <p>大小写字母数字均有，尝试base64解码</p>
@@ -372,20 +372,20 @@
 <hr>
 <h2 id="misc3-2-ezzip"><a href="#misc3-2-ezzip" class="headerlink" title="misc3-2-ezzip"></a>misc3-2-ezzip</h2><p>给了一个压缩包 发现有密码保护，题目中提示“archpr”和“密码长度为6，包含数字和小写字母”</p>
 <p>搜索<a target="_blank" rel="noopener" href="https://www.gndown.com/4185.html">archpr</a>发现是个爆破软件 下载安装 打开zip 把密码长度和范围设置好 点击开始爆破</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/11.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/12.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/11.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/12.png" srcset="/img/loading.gif" lazyload></p>
 <p>密码：8abc64</p>
 <p>解压得到八卦.txt</p>
 <p><code>☱☲☷☱☱☰☱☲☵☱☰☳☱☲☴☱☰☶☱☷☳☱☴☱☱☵☵☰☶☱☱☵☶☱☶☵☰☶☰☱☶☳☰☶☱☰☴☱☱☳☷☱☷☲☱☵☱☱☶☰☱☳☷☱☴☶☱☵☴☱☷☱☱☷☵</code></p>
 <p>使用随波逐流中的八卦解密工具：WHUCTF{am1nu0s1!_zip_fly}</p>
 <hr>
 <h2 id="misc4-BlindWaterMark"><a href="#misc4-BlindWaterMark" class="headerlink" title="misc4-BlindWaterMark"></a>misc4-BlindWaterMark</h2><p>下载压缩包解压，打开文件夹发现两张外表一致的图片</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/13.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/13.png" srcset="/img/loading.gif" lazyload></p>
 <p>回看题名，题为BlindWaterMark，搜索发现有一个<a target="_blank" rel="noopener" href="https://github.com/chishaxie/BlindWaterMark">github</a>项目就叫这个，这两张图片运用了盲水印的技术</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/14.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/15.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/14.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/15.png" srcset="/img/loading.gif" lazyload></p>
 <p>下载后根据文件指示对题目的两张图片做处理</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/16.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/16.png" srcset="/img/loading.gif" lazyload></p>
 <p>WHUCTF{BWM_IS_GOOD}</p>
 <hr>
 <h2 id="misc5-1-年轮"><a href="#misc5-1-年轮" class="headerlink" title="misc5-1-年轮"></a>misc5-1-年轮</h2><p>下载压缩包，解压后发现文件夹套娃文件夹，尝试写出脚本提取最里层的文件</p>
@@ -401,7 +401,7 @@
 <p>搜索发现一种加解密Ook</p>
 <p>使用<a target="_blank" rel="noopener" href="https://www.splitbrain.org/services/ook">Ook</a>解密得到文本：<code>nizaikankannidehoumianne</code></p>
 <p>用该文本解密压缩包得到flag.txt，出现了一个<code>fake_flag</code>,长得很奇怪的样子</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/17.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/17.png" srcset="/img/loading.gif" lazyload></p>
 <p>该文本中共有497字符，尝试<a target="_blank" rel="noopener" href="http://www.sexy0769.com/zeroWidthEncode/index.jsp">零宽字符解密</a></p>
 <p>解密得到：<code>congratulations！WHUCTF&#123;k3y_1n_o_4nd_0!&#125; key:sh4rk_0n_w1r3:)</code></p>
 <p>key为题目ezpcap的压缩包密码</p>
@@ -409,7 +409,7 @@
 <hr>
 <h2 id="misc6-密码在哪里"><a href="#misc6-密码在哪里" class="headerlink" title="misc6-密码在哪里"></a>misc6-密码在哪里</h2><p>下载压缩包，发现有密码，题目并未给特定的提示信息，根据文件名用winhex寻找密码</p>
 <p>在文件尾部发现信息<code>iloveu#</code> 为压缩包密码 解压得到图片</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/18.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/18.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>按照文件名使用foremost分离文件</p>
 <p>得到jpg文件和zip文件</p>
@@ -417,7 +417,7 @@
 <p>用kafuchino解密压缩包，得到被裁减的答案.png</p>
 </blockquote>
 <p>检测文件的CRC值发现其尺寸有问题，修正尺寸为86×1704后得到完整密文</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/19.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/19.png" srcset="/img/loading.gif" lazyload></p>
 <p>摩斯密码解密</p>
 <p>WHUCTF{MISC_IS_SO_FUNNY}</p>
 <hr>
@@ -432,7 +432,7 @@
 <p>以此为密码解开3.pig压缩包</p>
 <p>3.pig</p>
 <p>压缩包内部为一张图片</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/20.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/20.png" srcset="/img/loading.gif" lazyload></p>
 <p>猪圈密码 找个在线解密器手动对照输入一下</p>
 <p>whuctf{ni_ruo_san_dong_lai}</p>
 <hr>
@@ -447,7 +447,7 @@
 <li><p>用stegsolve打开文件翻到red plane 0图层发现一个码</p>
 </li>
 </ol>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/21.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/21.png" srcset="/img/loading.gif" lazyload></p>
 <p>搜索发现是汉信码，找个汉信码在线扫描器得到压缩包密码<code>m3ng_lei</code></p>
 <ol start="3">
 <li><p>你甚至不能擦伤我.zip</p>
@@ -489,12 +489,12 @@
 <p>WHUCTF{Y0U_AR3_tHE_HER0_MAKE_M15C_GR3aT_AgA1N}</p>
 <hr>
 <h2 id="bin败如shadow"><a href="#bin败如shadow" class="headerlink" title="bin败如shadow"></a>bin败如shadow</h2><p>打开解压后的文件夹为key.txt和加密的压缩包，观察txt文件中只有两种字符”喵”和”呜”</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/22.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/22.png" srcset="/img/loading.gif" lazyload></p>
 <p>由题名中的bin考虑转为二进制数值。但并不知道哪个字符对应0</p>
 <p>从题名的镜子考虑将字符串反转，发现按八位分隔后，文字以“喵呜”或“喵喵”开头，则考虑ASCII编码（ASCII编码中可读字符的编码为33~126，转为八位二进制为01或00开头）</p>
 <p>转为二进制后得到字符<code>bTN3X21ldw</code>，添加两个等号用base64解码得到压缩包密码：<code>m3w_mew</code></p>
 <p>解压压缩包得到txt文件，打开为喵呜二字组成的方阵，这里ctrl加滚轮就可以看出已经被排列出二维码的模样了</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/23.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/23.png" srcset="/img/loading.gif" lazyload></p>
 <p>发现是翻转的二维码，截图，将图片镜像后扫描</p>
 <p>当然写个脚本把0和1转为黑白像素块也没问题</p>
 <p>whuctf{mew_mew_mew}</p>
@@ -503,18 +503,18 @@
 <p>观察发现里面仅含有u,h,c,O,w,C,T,f,N,t,U,F,n,s,{,},3,1这几种字符，考虑将这些字符的出现频率排序</p>
 <p>考虑字频分析排序</p>
 <p>随波逐流一把梭了</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/24.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/24.png" srcset="/img/loading.gif" lazyload></p>
 <p>whuctf{COUNT1sF3n}</p>
 <hr>
 <h2 id="消失的32名贝斯手"><a href="#消失的32名贝斯手" class="headerlink" title="消失的32名贝斯手"></a>消失的32名贝斯手</h2><p>解压压缩包得到一个jpg文件，放入winhex，发现文件末尾有可读字符串</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/25.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/25.png" srcset="/img/loading.gif" lazyload></p>
 <p>base32解密</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/26.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/26.png" srcset="/img/loading.gif" lazyload></p>
 <p>发现依然是base32 继续解密 发现得到的flag提交错误</p>
 <p>根据题目名字”消失的”，思考base32解码的本质：</p>
 <p>Base32将任意字符串按照字节进行切分，并将每个字节对应的二进制值（不足8比特高位补0）串联起来，按照5比特一组进行切分，并将每组二进制值转换成十进制来对应32个可打印字符中的一个。</p>
 <p>由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base32按5比特切分的二进制数据必须是40比特的倍数（5和8的最小公倍数）。例如输入单字节字符“%”，它对应的二进制值是“100101”，前面补两个0变成“00100101”（二进制值不足8比特的都要在高位加0直到8比特），从左侧开始按照5比特切分成两组：“00100”和“101”，后一组不足5比特，则在末尾填充0直到5比特，变成“00100”和“10100”，这两组二进制数分别转换成十进制数，通过表格即可找到其对应的可打印字符“E”和“U”，但是这里只用到两组共10比特，还差30比特达到40比特，按照5比特一组还需6组，则在末尾填充6个“&#x3D;”。填充“&#x3D;”符号的作用是方便一些程序的标准化运行，大多数情况下不添加也无关紧要，而且，在URL中使用时必须去掉“&#x3D;”符号。</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/27.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/27.png" srcset="/img/loading.gif" lazyload></p>
 <p>base32解码是把每个字符转换为对应的5byte二进制数据，然后将这些二进制数据串联起来，最后按8bit一组进行切分，转换为原始数据，4个等号是为了凑齐每行的40bit，而解码时由于填充，只用到了前16bit，JZAU转化为的是20bit，有4bit“消失了”，用于解码的就是这消失的4bit。（1byte&#x3D;8bits&#x3D;8位)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs Plain">JZAU====<br>IFSO====<br>INKG====<br>IZ5R====<br>I5ZG====<br>MVQR====<br>ORPW====<br>MRSU====<br>ORSU====<br>MN2D====<br>NF3F====<br>MVPU====<br>ORUE====<br>NFZW====<br>L5UX====<br>ONP3====<br>ORUF====<br>MVPZ====<br>MNXT====<br>OJZA====<br>MVRX====<br>ORPV====<br>MFXF====<br>ON37====<br>MVZH====<br>HI6D====<br>JJNG====<br>IFKR====<br>INJH====<br>IQZW====<br>JM2T====<br>GJLU====<br>JNNG====<br>JNNE====<br>JRDF====<br>INDP====<br>I5ET====<br>JQ2T====<br>HZID====<br>NRSS====<br>MFZV====<br>MVP7====<br>ON2W====<br>MJWS====<br>NF2D====<br>L54U====<br>N52T====<br>OJPV====<br>MFXD====<br>ON3V====<br>MVZG====<br>ONPZ====<br>ORXT====<br>L5TV====<br>MV2H====<br>L5YE====<br>N5UT====<br>NZ2F====<br>OMQX====<br>EF65====<br></code></pre></td></tr></table></figure>
 
@@ -533,11 +533,11 @@
 <p>发现下面的告示牌</p>
 <p>whuctf{thIs_1s_just_a_easy_0ne}</p>
 <hr>
-<h1 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h1><h2 id="deltafuck"><a href="#deltafuck" class="headerlink" title="deltafuck"></a>deltafuck</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/28.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<h1 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h1><h2 id="deltafuck"><a href="#deltafuck" class="headerlink" title="deltafuck"></a>deltafuck</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/28.png" srcset="/img/loading.gif" lazyload></p>
 <p>DiskGenius打开虚拟磁盘文件</p>
 <p>打开文件夹可以看到windows文件夹和Users文件夹</p>
 <p>Users里有Jacob的用户文件夹</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/29.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/29.png" srcset="/img/loading.gif" lazyload></p>
 <p>在<code>\Windows\System32\config</code>下找到SAM和SYSTEM文件</p>
 <p>右键复制到自己的电脑上 然后拖进kali虚拟机</p>
 <p>使用impacket提取哈希</p>
@@ -547,30 +547,30 @@
 <p><code>Jacob Haavk:1001:aad3b435b51404eeaad3b435b51404ee:4d6527d571c73d1345e4f9a0ce5759bc:::</code></p>
 <p>后半段就是Jacob的NTLM哈希：<code>4d6527d571c73d1345e4f9a0ce5759bc</code></p>
 <p>cmd5网站爆破一下NTLM 没有cmd5的拿hashcat</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/30.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/30.png" srcset="/img/loading.gif" lazyload></p>
 <p>md5加密一下</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/31.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/31.png" srcset="/img/loading.gif" lazyload></p>
 <p>whuctf{b0b2f34c1107598505473e680e02fa3d}</p>
 <h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>vmware打开deltafuck的虚拟机</p>
 <p>直接在此电脑搜索注册表regedit.exe 打开</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/32.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/32.png" srcset="/img/loading.gif" lazyload></p>
 <p>flag{Maybe_thIs_ls_the_Easiest_Flag}</p>
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/33.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/34.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/33.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/34.png" srcset="/img/loading.gif" lazyload></p>
 <p>在文档里发现监听记录文件夹 翻找后发现除了一个其他都是空文件</p>
 <p>把这个有内容的pcapng复制到桌面 wireshark打开发现是USB流量分析</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ON_Zero/article/details/130528679">https://blog.csdn.net/ON_Zero/article/details/130528679</a></p>
 <p>参考这篇文章或者直接一把梭</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/35.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/35.png" srcset="/img/loading.gif" lazyload></p>
 <p>密码：<code>Ahsarahf0rever</code></p>
 <p>这边sishijiu一开始用脚本把所有caps都弄成unknown字符了 联系出题人把答案改成全大写了 后来发现了这个问题 在此致歉</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/36.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/36.png" srcset="/img/loading.gif" lazyload></p>
 <p>whuctf{28b6dea67797417eaacd62785a498070}</p>
-<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/37.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/37.png" srcset="/img/loading.gif" lazyload></p>
 <p>火箭发射文件夹中发现发射程序.exe</p>
 <p>复制到自己电脑的桌面用ida打开</p>
 <p>进来点进main函数按F5看到一串奇怪的字符串 怀疑是加密密钥</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/38.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/38.png" srcset="/img/loading.gif" lazyload></p>
 <p>发现里面有个encrypt函数 点进去发现是加密算法</p>
 <p>交给ai帮忙解密一下</p>
 <p>根据给定的加密函数和主函数代码，加密过程是将输入字符串（Rocket Launch Key）与密钥字符串 “Haavk” 进行循环加密。加密公式为： <code>encrypted_char = (original_char + key_char) % 93 + 33</code> 其中，<code>original_char</code> 是输入字符串的每个字符的 ASCII 值，<code>key_char</code> 是密钥 “Haavk” 的循环字符（索引为 <code>i % 5</code>），<code>encrypted_char</code> 是加密后的字符。</p>
@@ -1007,13 +1007,13 @@
 <ol>
 <li>原始字符串： 连接所有原始字符：<code>S</code> + <code>k</code> + <code>y</code> + <code>B</code> + <code>e</code> + <code>l</code> + <code>o</code> + <code>n</code> + <code>g</code> + <code>s</code> + <code>T</code> + <code>o</code> + <code>H</code> + <code>a</code> + <code>a</code> + <code>v</code> + <code>k</code> &#x3D; <code>&quot;SkyBelongsToHaavk&quot;</code>。</li>
 </ol>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/39.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/39.png" srcset="/img/loading.gif" lazyload></p>
 <p>whuctf{089d37a29a7bc235b842364259720457}</p>
 <h3 id><a href="#" class="headerlink" title="???"></a>???</h3><p>找到彩蛋</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/40.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/40.png" srcset="/img/loading.gif" lazyload></p>
 <p>找到群友和游戏</p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/41.png" srcset="/img/loading.gif" lazyload alt="ezsignin"><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/42.png" srcset="/img/loading.gif" lazyload alt="ezsignin"><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/43.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
-<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/44.png" srcset="/img/loading.gif" lazyload alt="ezsignin"></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/41.png" srcset="/img/loading.gif" lazyload><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/42.png" srcset="/img/loading.gif" lazyload><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/43.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2025/08/24/ctf/wp/2025/WHUCTF2025%E8%BF%8E%E6%96%B0%E8%B5%9B/44.png" srcset="/img/loading.gif" lazyload></p>
 <p>whuctf{2312e27351570365ad521d38ecda5d22}</p>
 <hr>
 <h2 id="Ezpcap"><a href="#Ezpcap" class="headerlink" title="Ezpcap"></a>Ezpcap</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Plain">GET /index.php?url=gopher://127.0.0.1:80/_POST%20%2Fadmin.php%20HTTP%2F1.1%250d%250aHost%3A%20localhost%3A80%250d%250aConnection%3A%20close%250d%250aContent-Type%3A%20application%2Fx-www-form-urlencoded%250d%250aContent-Length%3A%2078%250d%250a%250d%250aid%253D1%2529%2520and%2520if%2528%2528ascii%2528substr%2528%2528select%2520flag%2520from%2520flag%2529%252C7%252C1%2529%2529%253D%252767%2527%2529%252Csleep%25283%2529%252C0%2529%2520--%2520<br></code></pre></td></tr></table></figure>
