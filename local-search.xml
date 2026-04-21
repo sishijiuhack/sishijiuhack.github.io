@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>WHUCTF2026校赛</title>
+    <link href="/2026/04/21/ctf/wp/2026/WHUCTF2026%E6%A0%A1%E8%B5%9B/"/>
+    <url>/2026/04/21/ctf/wp/2026/WHUCTF2026%E6%A0%A1%E8%B5%9B/</url>
+    
+    <content type="html"><![CDATA[<p>这次misc总体来说从难度上相较新生赛甚至可能更简单，涉及的知识点不多，也不难，也属于是给其他方向让步引导大家多学一门方向，而不是光打misc；同时要求更多的手操环节，降低ai介入的同时增加趣味性。<br>看完大家写的问卷说实话挺开心的，可能甚至比起自己拿奖还要多出那么一点点收获感，也立马截图转给了我的队友（出It’smyOS!!!!的师傅）。感谢ctf社团，感谢DAWN，感谢GBC，感谢所有为这个小比赛一起付出和一起收获的办赛方和选手。<br>唯三美中不足的是：<br>1.渗透出了点问题，和misay一起进行容器整改的时候对部分命令没做保护，导致entrypoint泄露，打出来基本都是AI+非预期；不过还是有好学的同志赛后自己手搓了一遍预期解，这里再次表达感谢；<br>2.区块链出烂了，详见后面；<br>3.一些小花絮，这里当个乐子，不方便详细说了，大致的几个情况如图：<br><img src="/2026/04/21/ctf/wp/2026/WHUCTF2026%E6%A0%A1%E8%B5%9B/8056dbaa476a7be5961f162bcc3a8953.jpg"><br><img src="/2026/04/21/ctf/wp/2026/WHUCTF2026%E6%A0%A1%E8%B5%9B/065b37b5d8f69135ef19f7b516b4d842.jpeg"><br><img src="/2026/04/21/ctf/wp/2026/WHUCTF2026%E6%A0%A1%E8%B5%9B/image.png"><br>我马上就要退役了，面对这种情况我像一个手足无措的老头子，不知道能说什么。也对，AI时代大家都挺迷茫的<br><img src="/2026/04/21/ctf/wp/2026/WHUCTF2026%E6%A0%A1%E8%B5%9B/3f43b621-d37d-4424-83a3-dd9340992d92.jpg"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>wp</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CVE-2022-29464</title>
     <link href="/2026/02/16/pentest/cve/CVE-2022-29464/"/>
     <url>/2026/02/16/pentest/cve/CVE-2022-29464/</url>
